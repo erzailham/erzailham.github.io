@@ -1,0 +1,1315 @@
+/*
+
+Author: radekthemes
+Template: Marek - Personal Portfolio Template
+Version: 1.0
+
+Table of contents:
+1. General styles
+2. Typography
+3. Helpers
+4. Specing
+5. Preloader
+6. Buttons
+7. Go up button
+8. Social-list
+9. Header and navigation
+10. Banner
+10.1 Banner Main
+10.2 Banner Slider
+10.3 Banner Skew
+10.4 Banner Particle
+10.5 Banner Blog Page
+10.6 Banner Blog Post Page
+11. About Me
+12. Portfolio
+13. Facts
+14. Services
+15. Testimonials
+16. Clients
+17. Blog
+18. Contact
+19. Footer
+20. Blog Page
+21. Blog Post Page
+22. Responsive
+
+*/
+/* ----------------------------------------
+   ----------- 1.GENERAL STYLES -----------
+   ---------------------------------------- */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700,800');
+html, body {
+ 	height: 100%;
+}
+body {
+ 	-webkit-font-smoothing: antialiased;
+  background: #fff;
+ 	font-family: 'Poppins', Helvetica, Arial, sans-serif;
+ 	font-size: 14px;
+ 	line-height: 1.5;
+ 	letter-spacing: 1px;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+input::-moz-focus-inner {
+    border: 0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/* ----------------------------------------
+   -------------- 2.TYPOGRAPHY ------------
+   ---------------------------------------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+.number {
+ 	color: #000;
+ 	font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+ 	margin: 0;
+ 	padding: 0;
+}
+h1 {
+	font-size: 47px;
+  line-height: 70px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: #fff;
+}
+h2 {
+  font-weight: 700;
+ 	font-size: 31px;
+  line-height: 46px;
+ 	letter-spacing: 0.04em;
+}
+h3 {
+	font-size: 21px;
+  line-height: 34px;
+	letter-spacing: 0.03em;
+  font-weight: 600;
+}
+h4 {
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.025em;
+}
+p {
+ 	color: #4c4c4c;
+ 	line-height: 24px;
+ 	letter-spacing: 0.025em;
+}
+a {
+ 	text-decoration: none;
+ 	font-size: 14px;
+  font-weight: 600;
+  outline: none !important;
+  cursor: pointer;
+}
+a:hover,
+a:focus,
+a:active {
+ 	color: #fff;
+ 	text-decoration: none;
+ 	outline: none !important;
+}
+/* ----------------------------------------
+   --------------- 3.HELPERS --------------
+   ---------------------------------------- */
+.no-padding {
+  padding: 0;
+  overflow-x: hidden;
+}
+.img-full {
+  width: 100%;
+}
+.bg-white {
+  background-color: #fff !important;
+}
+.section-title {
+  margin-bottom: 96px;
+}
+.section-title h4 {
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #4c4c4c;
+}
+/* ----------------------------------------
+   -------------- 4.SPECING ---------------
+   ---------------------------------------- */
+.pd-t-b-72 {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+.pd-t-96 {
+  padding-top: 96px;
+}
+.pd-t-b-96 {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.pd-t-b-120 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.pd-t-b-144 {
+  padding-top: 144px;
+  padding-bottom: 144px;
+}
+.pd-t-144 {
+  padding-top: 144px;
+}
+.pd-b-144 {
+  padding-bottom: 144px;
+}
+/* ----------------------------------------
+   -------------- 5.PRELOADER -------------
+   ---------------------------------------- */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+}
+.preloader-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.preloader-icon {
+  width: 72px;
+  height: 72px;
+  display: inline-block;
+  padding: 0px;
+}
+.preloader-icon span {
+  position: absolute;
+  display: inline-block;
+  width: 72px;
+  height: 72px;
+  border-radius: 100%;
+  background-color: #191919;
+  -webkit-animation: preloader-fx 1.6s linear infinite;
+  animation: preloader-fx 1.6s linear infinite;
+}
+.preloader-icon span:last-child {
+  animation-delay: -0.8s;
+  -webkit-animation-delay: -0.8s;
+}
+@keyframes preloader-fx {
+  0% {transform: scale(0, 0); opacity:0.5;}
+  100% {transform: scale(1, 1); opacity:0;}
+}
+@-webkit-keyframes preloader-fx {
+  0% {-webkit-transform: scale(0, 0); opacity:0.5;}
+  100% {-webkit-transform: scale(1, 1); opacity:0;}
+}
+/* ----------------------------------------
+   -------------- 6.BUTTONS ---------------
+   ---------------------------------------- */
+.btn {
+  font-weight: 600;
+  color: #fff;
+  font-size: 12px;
+  padding: 20px 40px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.btn-dark {
+  border: 2px solid #000;
+  color: #000;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.btn-dark:hover,
+.btn-dark:focus {
+  color: #fff;
+  background-color: #000;
+  border: 2px solid transparent;
+}
+.btn-dark-2 {
+  background-color: #000;
+  border: 2px solid transparent;
+  color: #fff;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.btn-dark-2:hover,
+.btn-dark-2:focus {
+  color: #000;
+  background-color: transparent;
+  border: 2px solid #000;
+}
+.btn-light {
+  background-color: #fff;
+  border: 2px solid transparent;
+  color: #000;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.btn-light:hover,
+.btn-light:focus {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+/* ----------------------------------------
+   ------------ 7.GO UP BUTTON ------------
+   ---------------------------------------- */
+.button-up {
+  display: none;
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 40;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.button-up i {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  background-color: #000;
+  color: #fff;
+}
+.button-up:hover {
+  bottom: 36px;
+}
+/* ----------------------------------------
+   ------------ 8.SOCIAL-LIST -------------
+   ---------------------------------------- */
+.social-list li {
+  display: inline-block;
+  margin: 0 14px;
+}
+.social-list li a {
+  color: #7f7f7f;
+  font-size: 16px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.social-list li:first-child {
+  margin-left: 0;
+}
+.social-list li:last-child {
+  margin-right: 0;
+}
+.social-list li:hover a {
+  color: #fff;
+}
+/* ----------------------------------------
+   -------- 9.HEADER AND NAVIGATION -------
+   ---------------------------------------- */
+.navbar-fixed-top {
+  z-index: 99;
+}
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+  padding: 36px 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  margin-top: 6px;
+}
+.navbar-nav {
+  margin-top: 2px;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ccc;
+  font-weight: 600;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  font-size: 14px;
+  padding: 10px 18px;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li.active > a,
+.navbar-default .navbar-nav > li.active > a:focus,
+.navbar-default .navbar-nav > li.active > a:hover {
+  color: #fff!important;
+  background-color: transparent;
+}
+.top-nav-collapse {
+  background-color: #fff;
+  padding: 18px 0;
+  -webkit-box-shadow: 0 0 6px #b8b8b9;
+  -moz-box-shadow: 0 0 6px #b8b8b9;
+  box-shadow: 0 0 6px #b8b8b9;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.top-nav-collapse .navbar-nav > li > a {
+  color: #4c4c4c;
+}
+.top-nav-collapse .navbar-nav > li > a:hover,
+.top-nav-collapse .navbar-nav > li.active > a,
+.top-nav-collapse .navbar-nav > li.active > a:focus,
+.top-nav-collapse .navbar-nav > li.active > a:hover {
+  color: #000!important;
+}
+.navbar-default .logo_light {
+  display: block;
+}
+.navbar-default .logo_dark {
+  display: none;
+}
+.top-nav-collapse .logo_dark {
+  display: block;
+}
+.top-nav-collapse .logo_light {
+  display: none;
+}
+.navbar-default .navbar-toggle {
+  border: none;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.top-nav-collapse .navbar-toggle .icon-bar {
+  background-color: #000;
+}
+/* ----------------------------------------
+   --------------- 10.BANNER --------------
+   ---------------------------------------- */
+.banner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.banner-text h1 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+.banner-text h4 {
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+.banner-text .btn {
+  margin-top: 24px;
+}
+/* ----------------------------------------
+   ----------- 10.1.BANNER MAIN ----------
+   ---------------------------------------- */
+.banner-1 {
+  background: url("../img/banner.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* ----------------------------------------
+   ---------- 10.2.BANNER SLIDER ----------
+   ---------------------------------------- */
+.banner-slider .item {
+  height: 100vh;
+  width: 100%;
+}
+.banner-slider .item-1 {
+  background: url("../img/slide-2.jpg") center center no-repeat;
+  background-size: cover;
+}
+.banner-slider .item-2 {
+  background: url("../img/slide-1.jpg") center center no-repeat;
+  background-size: cover;
+}
+.banner-slider .item-3 {
+  background: url("../img/banner.jpg") center center no-repeat;
+  background-size: cover;
+}
+.banner .owl-prev,
+.banner .owl-next {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.banner .owl-prev {
+  left: 20px;
+}
+.banner .owl-next {
+  right: 20px;
+}
+.owl-theme .owl-nav [class*=owl-] {
+  color: #fff;
+  font-size: 31px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.7;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.owl-theme .owl-nav [class*=owl-]:hover,
+.owl-theme .owl-nav [class*=owl-]:active {
+  background: transparent;
+  text-decoration: none;
+  opacity: 1;
+}
+.banner .owl-theme .owl-dots {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  left: 0;
+}
+.banner .owl-theme .owl-dots .owl-dot span {
+  background: #b2b2b2;
+}
+/* ----------------------------------------
+   ----------- 10.3.BANNER SKEW -----------
+   ---------------------------------------- */
+.banner-skew {
+  background: url("../img/slide-2.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.banner-skew:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 96px solid #fff;
+  border-left: 1920px solid transparent;
+}
+/* ----------------------------------------
+   --------- 10.4.BANNER PARTICLES --------
+   ---------------------------------------- */
+.banner-particles {
+  background: url("../img/banner.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+/* ----------------------------------------
+   --------- 10.5.BANNER BLOG PAGE --------
+   ---------------------------------------- */
+.banner-blog {
+  background: url("../img/blog_bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 80vh;
+}
+/* ----------------------------------------
+   --------- 10.6.BANNER BLOG POST --------
+   ---------------------------------------- */
+.banner-blog-post {
+  background: url("../img/blog_post_bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 80vh;
+}
+/* ----------------------------------------
+   ------------- 11.ABOUT ME --------------
+   ---------------------------------------- */
+.about-me img {
+  margin: 0 auto;
+}
+.about-me .about-text {
+  padding-top: 102px;
+}
+.about-me h2 {
+  margin-top: 2px;
+  margin-bottom: 12px;
+}
+.about-me-info:nth-of-type(1) {
+  margin-top: 16px;
+}
+.about-me-info {
+  margin-bottom: 9px;
+}
+.about-me-info span {
+  font-weight: 700;
+}
+.about-me .btn {
+  margin-top: 12px;
+}
+/* ----------------------------------------
+   ------------ 12.PORTFOLIO --------------
+   ---------------------------------------- */
+.work {
+  background-color: #FBFBFB;
+}
+.work .section-title {
+  margin-bottom: 60px;
+}
+.filter-button {
+  display: inline-block;
+  margin-bottom: 60px;
+}
+.filter-button li {
+  display: inline-block;
+  padding: 10px 18px;
+  margin: 0 6px;
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.filter-button li:hover,
+.filter-button li.active {
+  color: #fff;
+  background-color: #000;
+}
+.filter-button li:first-child {
+  margin-left: 0;
+}
+.filter-button li:last-child {
+  margin-right: 0;
+}
+.portfolio-grid {
+  padding-bottom: 30px;
+}
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.grid-item .portfolio-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  opacity: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.grid-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+.grid-item:hover .portfolio-overlay .portfolio-overlay-text {
+  opacity: 1;
+}
+.grid-item .portfolio-overlay .portfolio-overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  -webkit-transition: all 0.4s ease 0.2s;
+  -moz-transition: all 0.4s ease 0.2s;
+  transition: all 0.4s ease 0.2s;
+  opacity: 0;
+}
+.grid-item .portfolio-overlay .portfolio-overlay-text h3 {
+  color: #fff;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.98;
+}
+/* ----------------------------------------
+   --------------- 13.FACTS ---------------
+   ---------------------------------------- */
+.facts {
+  background: url("../img/facts_bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.facts-dark-bg {
+  background-color: #191919;
+}
+.facts span {
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-size: 47px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
+.facts h4 {
+  color: #fff;
+}
+/* ----------------------------------------
+   ------------- 14.SERVICES --------------
+   ---------------------------------------- */
+.services .services-item {
+  overflow: hidden;
+}
+.services .services-icon {
+  margin-bottom: 24px;
+}
+.services .services-icon span {
+  font-size: 39px;
+  color: #000;
+}
+.services .services-info h4 {
+  color: #191919;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.services .services-spacing {
+  margin-bottom: 60px;
+}
+/* ----------------------------------------
+   ----------- 15.TESTIMONIALS ------------
+   ---------------------------------------- */
+.testimonials {
+  background: url("../img/testimonials_bg.jpg") center center no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+.testimonials .section-title {
+  margin-bottom: 60px;
+}
+.owl-carousel .owl-item img {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: 24px 0;
+}
+.testimonials .item p {
+  color: #fff;
+}
+.testimonials .item h4 {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.testimonials .item h4 span {
+  color: #ccc;
+  font-weight: 600;
+}
+.testimonials .owl-carousel .owl-stage-outer {
+  padding-bottom: 10px;
+}
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: #fff;
+}
+.owl-theme .owl-dots .owl-dot span {
+  background: #7f7f7f;
+}
+/* ----------------------------------------
+   -------------- 16.CLIENTS --------------
+   ---------------------------------------- */
+.clients {
+  background-color: #191919;
+}
+.clients .clients-item {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.clients .clients-item .clients-logos {
+  width: 60%;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* ----------------------------------------
+   --------------- 17.BLOG ----------------
+   ---------------------------------------- */
+.blog {
+  background-color: #FBFBFB;
+}
+.blog-item img {
+  width: 360px;
+}
+.blog-item .post-image {
+  overflow: hidden;
+}
+.blog-item .post-image img {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.blog-item .post-image img:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.blog-item .blog-content {
+  background-color: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 360px;
+}
+.blog-item .blog-content .post-meta {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4c4c4c;
+}
+.blog-item .blog-content .post-meta a {
+  font-size: 12px;
+  color: #000;
+}
+.blog-item .blog-content .post-meta a:hover {
+  color: #4c4c4c;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.blog-item .blog-content .post-meta span {
+  margin-left: 6px;
+}
+.blog .post-title {
+  margin-bottom: 0;
+}
+.blog-item .blog-content .post-title a h4 {
+  color: #4c4c4c;
+  font-weight: 600;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.blog-item .blog-content .post-title a:hover h4 {
+  color: #000;
+}
+.blog .btn {
+  margin-top: 48px;
+}
+/* ----------------------------------------
+   -------------- 18.CONTACT --------------
+   ---------------------------------------- */
+.contact-more {
+  display: table;
+  background: url("../img/contact_item.jpg") center center no-repeat;
+  height: 445px;
+}
+.contact-more-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.contact-item {
+  margin-bottom: 16px;
+}
+.contact-item:last-child {
+  margin-bottom: 0
+}
+.contact-item h4,
+.contact-item p {
+  color: #fff;
+}
+.contact-item h4 {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+form {
+  padding-left: 12px;
+}
+.form-group {
+  margin-bottom: 24px;
+}
+.form-control {
+  color: #4c4c4c;
+  font-size: 14px;
+  -webkit-box-shadow: none;
+  -moz-webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background-color: #FBFBFB;
+  border: 2px solid #FBFBFB;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  height: 58px;
+  outline: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.form-control:hover,
+.form-control:active,
+.form-control:focus {
+  -webkit-box-shadow: none;
+  -moz-webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid transparent;
+  background-color: #f5f5f5;
+}
+textarea {
+  resize: vertical;
+  overflow: auto;
+}
+.help-block{
+  margin-top: 10px;
+  font-size: 14px;
+}
+.text-danger {
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 142px;
+}
+.contact-second form .text-danger {
+  margin-left: 40px;
+}
+.has-error .form-control,
+.has-error .form-control:focus {
+  border: 0;
+  border: 2px solid #b01d1b;
+  -webkit-box-shadow: none;
+  -moz-webkit-box-shadow: none;
+  box-shadow: none;
+}
+.has-error .help-block,
+.text-danger {
+  color: #b01d1b;
+}
+button {
+  background-color: transparent;
+}
+/* ----------------------------------------
+   --------------- 19.FOOTER --------------
+   ---------------------------------------- */
+footer {
+  background: #191919;
+}
+footer p {
+  margin: 24px 0 0 0;
+  color: #7f7f7f;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+}
+/* ----------------------------------------
+   -------------- 20.BLOG PAGE ------------
+   ---------------------------------------- */
+.blog-page .blog-item img {
+  width: 100%;
+}
+.blog-page .blog-item .blog-content {
+  background-color: #fbfbfb;
+  padding: 30px;
+  max-width: 100%;
+}
+.blog-page .blog-spacing {
+  margin-bottom: 36px;
+}
+.blog-pagination {
+  text-align: center;
+  margin-top: 40px;
+}
+.blog-pagination li {
+  display: inline-block;
+  margin-right: 12px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #4c4c4c;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.blog-pagination li:hover,
+.blog-pagination li.active {
+  background-color: #000;
+}
+.blog-pagination li:hover a,
+.blog-pagination li.active a {
+  color: #fff;
+}
+/* ----------------------------------------
+   -------------- 21.BLOG POST ------------
+   ---------------------------------------- */
+.blog-post .post-img {
+  margin-bottom: 36px;
+}
+.blog-post h3 {
+  margin-bottom: 36px;
+}
+.blog-post h4 {
+  font-weight: 600;
+  margin-top: 20px;
+}
+.post-content {
+  margin-bottom: 36px;
+}
+blockquote {
+  padding: 24px 30px;
+  margin: 24px 0;
+  font-size: 16px;
+  border-left: 4px solid #191919;
+  background-color: #fbfbfb;
+}
+.share {
+  margin-top: 16px;
+}
+.share h4 {
+  display: inline-block;
+  margin-right: 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.share ul {
+  display: inline-block;
+}
+.share ul li {
+  margin: 0 12px;
+}
+.share li a {
+  font-size: 12px;
+  color: #4c4c4c;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.share li:hover a {
+  color: #000;
+}
+.comments {
+  margin-top: 60px;
+}
+.comments .comments-list {
+  overflow: hidden;
+}
+.comments .single-comment {
+  margin-bottom: 42px;
+  overflow: hidden;
+}
+.comments .single-comment .single-comment-image {
+  float: left;
+  width: 90px;
+  height: 90px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 40px;
+}
+.comments .single-comment-content {
+  overflow: hidden;
+}
+.comments .single-comment-content .single-comment-content-head {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.comments .single-comment-content .single-comment-content-head h4,
+.comments .single-comment-content .single-comment-content-head span,
+.comments .single-comment-content .single-comment-content-head a {
+  float: left;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.comments .single-comment-content .single-comment-content-head h4 {
+  margin-right: 12px;
+  margin-top: 0;
+}
+.comments .single-comment-content .single-comment-content-head span {
+  margin-right: 12px;
+}
+.comments .single-comment-content .single-comment-content-head a {
+  color: #4c4c4c;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.comments .single-comment-content .single-comment-content-head a:hover {
+  color: #000;
+}
+.comments-respond {
+  margin-top: 48px;
+}
+.comments-respond form {
+  padding-left: 0;
+}
+.comments-respond h3 {
+  margin-bottom: 36px;
+}
+.sidebar form {
+  padding-left: 0;
+}
+.sidebar .input-group {
+  width: 100%;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.sidebar .input-group input {
+  position: relative;
+  padding-right: 0;
+  border-bottom: 1px solid #fff;
+}
+.sidebar .input-group .input-group-btn {
+  position: absolute;
+  top: 20px;
+  right: 28px;
+}
+.sidebar .input-group .input-group-btn .btn {
+  background: transparent;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+.sidebar .input-group .input-group-btn i {
+  color: #999999;
+  font-size: 14px;
+}
+.sidebar h3 {
+  margin-bottom: 18px;
+}
+.sidebar img {
+  margin: 0 auto 24px auto;
+}
+.sidebar .categories {
+  margin: 30px 0;
+}
+.sidebar .categories ul li {
+  color: #4c4c4c;
+  margin-bottom: 8px;
+}
+.sidebar .categories ul li span {
+  float: right;
+}
+.post-tags .btn,
+.sidebar .post-tags .btn {
+  padding: 12px 24px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+/* ----------------------------------------
+   ------------- 22.RESPONSIVE ------------
+   ---------------------------------------- */
+/* Extra small devices (phones, less than 768px) */
+@media only screen and (max-width: 767px) {
+  .pd-t-b-96 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .pd-t-b-120 {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  .pd-t-144 {
+    padding-top: 84px;
+  }
+  .pd-b-144 {
+    padding-bottom: 84px;
+  }
+  .pd-t-b-144 {
+    padding-top: 84px;
+    padding-bottom: 84px;
+  }
+  .banner-1,
+  .banner-skew,
+  .banner-particles,
+  .banner-blog,
+  .banner-blog-post,
+  .facts,
+  .testimonials {
+    background-attachment: scroll;
+  }
+  .banner-text h1 {
+    font-size: 31px;
+    line-height: 46px;
+  }
+  .banner-text h3 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .section-title {
+    margin-bottom: 72px;
+  }
+  .navbar-default {
+    background-color: #fff;
+    padding: 17px 0;
+    -webkit-box-shadow: 0 0 6px #b8b8b9;;
+    -moz-box-shadow: 0 0 6px #b8b8b9;;
+    box-shadow: 0 0 6px #b8b8b9;
+  }
+  .navbar-default .logo_light {
+    display: none;
+  }
+  .navbar-default .logo_dark {
+    display: block;
+  }
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li.active > a,
+  .navbar-default .navbar-nav > li.active > a:focus,
+  .navbar-default .navbar-nav > li.active > a:hover {
+    color: #000!important;
+  }
+  .navbar-toggle {
+    margin-top: 12px;
+  }
+  .navbar-brand {
+    padding: 18px 15px;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: #191919;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #191919!important;
+  }
+  .button-up {
+    bottom: 14px;
+    right: 14px;
+  }
+  .about-me .about-text {
+    padding-top: 48px;
+  }
+  .work .section-title {
+    margin-bottom: 36px;
+  }
+  .filter-button {
+    margin-bottom: 36px;
+  }
+  .filter-button li {
+    margin-bottom: 4px;
+  }
+  .grid-item {
+    display: inline-block;
+  }
+  .services {
+    padding-bottom: 48px;
+  }
+  .services-item {
+    margin-bottom: 60px;
+  }
+  .services .services-spacing {
+    margin-bottom: 0;
+  }
+  .facts-spacing {
+    margin-bottom: 24px;
+  }
+  .clients .clients-item {
+    width: 50%;
+    height: auto;
+    line-height: 72px;
+    margin-bottom: 30px;
+  }
+  .blog-item {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .blog-spacing {
+    margin-bottom: 36px;
+  }
+  .blog .btn {
+    margin-top: 24px;
+  }
+  .text-danger {
+    display: block;
+    margin-top: 12px;
+  }
+  .contact-more {
+    height: 260px;
+    margin-bottom: 48px;
+  }
+  form {
+    padding-left: 0;
+  }
+  .comments-respond {
+    margin-top: 8px;
+  }
+  .sidebar {
+    margin-top: 60px;
+  }
+}
+/* Small devices (tablets, 768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .navbar-default .navbar-nav > li > a {
+    padding: 10px 14px;
+  }
+  .pd-t-b-144 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .pd-t-b-120 {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .section-title {
+    margin-bottom: 72px;
+  }
+  .about-me .about-text {
+    padding-top: 0;
+    padding-left: 15px;
+    margin-top: -10px;
+  }
+  .services {
+    padding-bottom: 60px;
+  }
+  .services-item {
+    margin-bottom: 60px;
+  }
+  .services-spacing {
+    margin-bottom: 0;
+  }
+  .sidebar {
+    margin-top: 72px;
+  }
+}
+/* Medium devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .about-me .about-text {
+    padding-top: 68px;
+  }
+}
