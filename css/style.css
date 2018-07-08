@@ -450,7 +450,7 @@ a:active {
   width: 100%;
 }
 .banner-slider .item-1 {
-  background: url("../img/slide-2.jpg") center center no-repeat;
+  background: url("../img/slide-rezailham-erzailham.png") center center no-repeat;
   background-size: cover;
 }
 .banner-slider .item-2 {
@@ -507,7 +507,7 @@ a:active {
    ----------- 10.3.BANNER SKEW -----------
    ---------------------------------------- */
 .banner-skew {
-  background: url("../img/slide-2.jpg") center center no-repeat;
+  background: url("../img/slide-rezailham-erzailham.png") center center no-repeat;
   background-size: cover;
   background-attachment: fixed;
   overflow: hidden;
