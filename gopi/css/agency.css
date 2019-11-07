@@ -119,8 +119,8 @@ img::-moz-selection {
 
 
 .btn-primary {
-  color: #ca3032;
-  background-color: transparent;
+  color: #fff;
+  background-color: #ca3032;
   border-color: #ca3032;
 }
 
