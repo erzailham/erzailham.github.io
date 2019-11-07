@@ -117,8 +117,10 @@ img::-moz-selection {
   border-bottom-left-radius: 8px;
 }
 
+
 .btn-primary {
-  background-color: #ca3032;
+  color: #ca3032;
+  background-color: transparent;
   border-color: #ca3032;
 }
 
@@ -129,6 +131,22 @@ img::-moz-selection {
 }
 
 .btn-primary:active, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+}
+
+.btn-secondary {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+}
+
+.btn-secondary:active, .btn-secondary:focus, .btn-secondary:hover {
+  background-color: #fec810 !important;
+  border-color: #fec810 !important;
+  color: white;
+}
+
+.btn-secondary:active, .btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
 }
 
@@ -167,7 +185,12 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  font-weight: bold;
+  font-weight: bold; 
+}
+
+#mainNav.navbar-shrink .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+  border-top: 2px solid #ca3032;
+  padding-top: 10px;
 }
 
 #mainNav.navbar-shrink .navbar-nav .nav-item .nav-link {
@@ -193,10 +216,12 @@ img::-moz-selection {
     padding-top: 0;
     padding-bottom: 0;
     background-color: #fff;
+    box-shadow: 0 10px 46px 0 rgba(0, 0, 0, 0.08);
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
-    padding: 0 0 12px 0;
+    margin-bottom: -12px;
+    /* padding: 0 0 12px 0; */
   }
 }
 
@@ -266,19 +291,55 @@ header.masthead .intro-text .intro-heading {
   }
 }
 
+header.secondhead {
+  height: 306px;
+  padding-top: 132px;
+  color: white;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000), url("../img/about-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom-left-radius: 56px;
+}
+
+header.masthead .intro-text .intro-lead-in {
+  font-size: 22px;
+  font-style: italic;
+  line-height: 22px;
+  margin-bottom: 25px;
+  font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+header.secondhead .intro-text .intro-desc {
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.5;
+  margin-bottom: 48px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+header.secondhead .intro-text .intro-heading {
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
 .service-heading {
   margin: 15px 0;
   text-transform: none;
 }
 
-#portfolio .portfolio-item {
+#about h2.section-heading {
+  text-align: left;
+}
+
+#menu .menu-item {
   right: 0;
   margin: 0 0 15px;
   border-top-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
 
-#portfolio .portfolio-item .portfolio-link {
+#menu .menu-item .menu-link {
   position: relative;
   display: block;
   max-width: 400px;
@@ -286,7 +347,7 @@ header.masthead .intro-text .intro-heading {
   cursor: pointer;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+#menu .menu-item .menu-link .menu-hover {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -297,11 +358,11 @@ header.masthead .intro-text .intro-heading {
   border-bottom-left-radius: 18px;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+#menu .menu-item .menu-link .menu-hover:hover {
   opacity: 1;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+#menu .menu-item .menu-link .menu-hover .menu-hover-content {
   font-size: 20px;
   position: absolute;
   top: 50%;
@@ -312,84 +373,84 @@ header.masthead .intro-text .intro-heading {
   color: white;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+#menu .menu-item .menu-link .menu-hover .menu-hover-content i {
   margin-top: -12px;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+#menu .menu-item .menu-link .menu-hover .menu-hover-content h3,
+#menu .menu-item .menu-link .menu-hover .menu-hover-content h4 {
   margin: 0;
 }
 
-#portfolio .portfolio-item .portfolio-caption {
+#menu .menu-item .menu-caption {
   max-width: 400px;
   margin: 0 auto;
   padding: 25px;
   text-align: center;
 }
 
-#portfolio .portfolio-item .portfolio-caption h4 {
+#menu .menu-item .menu-caption h4 {
   margin: 0;
   text-transform: none;
 }
 
-#portfolio .portfolio-item .portfolio-caption p {
+#menu .menu-item .menu-caption p {
   font-size: 14px;
   margin: 0;
   color: #858585;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-#portfolio * {
+#menu * {
   z-index: 2;
 }
 
 @media (min-width: 767px) {
-  #portfolio .portfolio-item {
+  #menu .menu-item {
     margin: 0 0 30px;
   }
 }
 
-.portfolio-modal .modal-dialog {
+.menu-modal .modal-dialog {
   margin: 1rem;
   max-width: 100vw;
 }
 
-.portfolio-modal .modal-content {
+.menu-modal .modal-content {
   padding: 100px 0;
   text-align: center;
 }
 
-.portfolio-modal .modal-content h2 {
+.menu-modal .modal-content h2 {
   font-size: 3em;
   margin-bottom: 15px;
 }
 
-.portfolio-modal .modal-content p {
+.menu-modal .modal-content p {
   margin-bottom: 30px;
 }
 
-.portfolio-modal .modal-content p.item-intro {
+.menu-modal .modal-content p.item-intro {
   font-size: 16px;
   font-style: italic;
   margin: 20px 0 30px;
   font-family: 'Droid Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
-.portfolio-modal .modal-content ul.list-inline {
+.menu-modal .modal-content ul.list-inline {
   margin-top: 0;
   margin-bottom: 30px;
 }
 
-.portfolio-modal .modal-content img {
+.menu-modal .modal-content img {
   margin-bottom: 30px;
 }
 
-.portfolio-modal .modal-content button {
+.menu-modal .modal-content button {
   cursor: pointer;
 }
 
-.portfolio-modal .close-modal {
+.menu-modal .close-modal {
   position: absolute;
   top: 25px;
   right: 25px;
@@ -399,11 +460,11 @@ header.masthead .intro-text .intro-heading {
   background-color: transparent;
 }
 
-.portfolio-modal .close-modal:hover {
+.menu-modal .close-modal:hover {
   opacity: 0.3;
 }
 
-.portfolio-modal .close-modal .lr {
+.menu-modal .close-modal .lr {
   /* Safari and Chrome */
   z-index: 1051;
   width: 1px;
@@ -414,7 +475,7 @@ header.masthead .intro-text .intro-heading {
   background-color: #212529;
 }
 
-.portfolio-modal .close-modal .lr .rl {
+.menu-modal .close-modal .lr .rl {
   /* Safari and Chrome */
   z-index: 1052;
   width: 1px;
@@ -427,6 +488,45 @@ header.masthead .intro-text .intro-heading {
 .menu-image {
   border-top-right-radius: 18px;
   border-bottom-left-radius: 18px;
+}
+
+#store {
+  padding: 0 !important;
+}
+
+#store .store-item {
+  color: #fff;
+  padding: 145px 80px 30px 249px;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), #000000), url("../img/store/store1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 8px;
+}
+
+#store .store-item p {
+  font-size: 16px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  margin-bottom: 35px;
+}
+
+#store .store-item .store-button {
+  text-align: right;
+}
+
+#store .store-item a {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-weight: bold;
+}
+
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  & > [class^="col-"],
+  & > [class*=" col-"] {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }
 
 .timeline {
@@ -694,13 +794,44 @@ section#contact :-ms-input-placeholder {
 }
 
 .footer {
-  padding: 25px 0;
-  text-align: center;
+  padding: 0px;
+}
+
+.footer .footer-head {
+  background-color: #ca3032;
+  color: #fff;
+  background-image: url("../img/footer-shape.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.footer .footer-head span{
+  width: 100px;
+  height: 138px;
+  line-height: 0.9;
+  margin-left: -50px;
+  font-size: 200px;
+  font-weight: bold;
+  color: #ffffff;
+  opacity: 0.15;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.footer .footer-head h1{
+  margin-top: 45px;
+  margin-left: -60px;
+  font-size: 40px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.footer .footer-head .tobeseller {
+  margin: auto;
+  text-align: right;
 }
 
 .footer span.copyright {
   font-size: 90%;
-  line-height: 40px;
+  line-height: 70px;
   text-transform: none;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
@@ -714,20 +845,18 @@ section#contact :-ms-input-placeholder {
 }
 
 ul.social-buttons {
+  text-align: right;
   margin-bottom: 0;
 }
 
 ul.social-buttons li a {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 50px;
-  display: block;
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   transition: all 0.3s;
-  color: white;
-  border-radius: 100%;
+  color: #212529;
   outline: none;
-  background-color: #212529;
 }
 
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
