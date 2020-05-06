@@ -1,11 +1,3 @@
-/*****************************************/
-
-/* Author: radekthemes */
-/* Template: Marek - Personal Portfolio */
-/* Version: 1.0 */
-
-/*****************************************/
-
 //Document on ready functions
 $(document).ready(function(){
   "use strict";
