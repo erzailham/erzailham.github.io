@@ -38,7 +38,9 @@
     <script type="text/javascript">
       window.onload = function () {
         // Deep link to your app goes here
-        window.location.assign("paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'");
+        setTimeout(() => {
+          window.location = "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
+        }, 1000);
       };
     </script>
     <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
