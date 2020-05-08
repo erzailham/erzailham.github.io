@@ -41,35 +41,37 @@
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
   <script>
     window.onload = function () {
-      var deeplinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
-      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      window.location.href = $('.deeplink_paxel').attr('href');
+      // var deepLinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
+      // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-      var isMobile = {
-        Android: function () {
-          return navigator.userAgent.match(/Android/i);
-        },
+      // var isMobile = {
+      //   Android: function () {
+      //     return navigator.userAgent.match(/Android/i);
+      //   },
 
-        iOS: function () {
-          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        }
-      };
+      //   iOS: function () {
+      //     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+      //   }
+      // };
 
-      if (isMobile.iOS() || isMobile.Android()) {
-        if (isChrome && isMobile.Android()) {
-          var confirm = window.confirm("You will open Paxel app");
-          if (confirm == true) {
-            window.location.href = deeplinkUrl;
-          } else {
-            console.log('cancelled')
-          }
-        } else {
-          window.location.href = deeplinkUrl;
-        }
-      }else {
-        alert("I'm using laptop");
-      }
+      // if (isMobile.iOS() || isMobile.Android()) {
+      //   if (isChrome && isMobile.Android()) {
+      //     var confirm = window.confirm("You will open Paxel app");
+      //     if (confirm == true) {
+      //       window.location = document.getElementById('#deeplink_paxel').href;
+      //     } else {
+      //       console.log('cancelled')
+      //     }
+      //   } else {
+      //     window.location.href = deepLinkUrl;
+      //   }
+      // }else {
+      //   alert("I'm using laptop");
+      // }
     }
   </script>
+  <a style="visibility: hidden; height: 0;" class="deeplink_paxel" href="paxel://createShipment?promocode=FEBRIANLEMAH"></a>
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
 
     <!-- ======== PRELOADER ======== -->
@@ -110,7 +112,6 @@
               I have experience of helping to develop an app for startups from scratch.
             </p>
             <a class="btn btn-dark" id="send_email" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
-            <a class="btn btn-dark" target="_blank" onclick="window.location='paxel://createShipment?promocode=FEBRIANLEMAH'">Open Paxel with window.location</a>
           </div><!-- /col-md-6 -->
         </div><!-- /row -->
       </div><!-- /container -->
