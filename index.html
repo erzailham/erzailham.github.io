@@ -34,14 +34,80 @@
   </head>
   <body class="no-scroll" data-spy="scroll" data-target="#navbar-collapse-1" data-offset="98">
 
-    <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
-    <script type="text/javascript">
-      window.onload = function () {
-        // Deep link to your app goes here
-        window.location = "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
-      };
-    </script>
-    <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
+  <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
+  <!-- <script type="text/javascript">
+    window.onload = function () {
+      // Deep link to your app goes here
+      window.location = "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
+    };
+  </script> -->
+  <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
+
+  <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
+  <!-- <script type="text/javascript">
+    window.onload = function () {
+      // Deep link to your app goes here
+      window.location =
+        "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
+    };
+  </script> -->
+
+  <script>
+    var deeplinking_url = 'paxel://createShipment';
+    $(document).ready(function () {
+      callDeeplink(deeplinking_url);
+    });
+
+    var callDeeplink = function (deeplinking_url) {
+      if (deeplinking_url != '') {
+        var deviceOS = getMobileOperatingSystem()
+        var fallbackUrl = deviceOS == 'iOS'? 'https://apps.apple.com/id/app/paxel/id1372668166' : 'https://play.google.com/store/apps/details?id=com.paxel';
+        var iframe = document.createElement("iframe");
+        var nativeSchemaUrl = deeplinking_url;
+        console.log(nativeSchemaUrl);
+
+        iframe.id = "app_call_frame";
+        iframe.style.border = "none";
+        iframe.style.width = "1px";
+        iframe.style.height = "1px";
+        iframe.onload = function () {
+          document.location = nativeSchemaUrl;
+        };
+        iframe.src = nativeSchemaUrl; //iOS app schema url
+        window.onload = function () {
+          document.body.appendChild(iframe);
+        }
+
+        //IF the App is not install then it will redirect to store.
+        setTimeout(function () {
+          console.log('Iframe Removed...');
+          document.getElementById("app_call_frame").remove();
+          window.location = fallbackUrl; //fallback url
+        }, 5000);
+      }
+    };
+
+    function getMobileOperatingSystem() {
+      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Windows Phone must come first because its UA also contains "Android"
+      if (/windows phone/i.test(userAgent)) {
+        return "Windows Phone";
+      }
+
+      if (/android/i.test(userAgent)) {
+        return "Android";
+      }
+
+      // iOS detection from: http://stackoverflow.com/a/9039885/177710
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+      }
+
+      return "unknown";
+    }
+  </script>
+  <!-- ======== /DEEPLINK APP PAXEL ======== -->
 
     <!-- ======== PRELOADER ======== -->
     <div class="preloader">
