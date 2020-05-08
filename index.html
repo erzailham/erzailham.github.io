@@ -39,27 +39,8 @@
   <body class="no-scroll" data-spy="scroll" data-target="#navbar-collapse-1" data-offset="98">
 
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
-  <!-- <script type="text/javascript">
-    window.onload = function () {
-      // Deep link to your app goes here
-      window.location = "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
-    };
-  </script> -->
   <script>
     window.onload = function () {
-
-      const installedApps = await navigator.getInstalledRelatedApps();
-      const androidPaxelApp = installedApps.find(app => app.id === 'com.paxel');
-      const iosPaxelApp = installedApps.find(app => app.id === 'com.paxel');
-
-      if (androidPaxelApp || iosPaxelApp) {
-        // There’s an installed native app that handles sending push messages.
-        // No need to do anything.
-        alert('you have the app');
-      }else {
-        alert('you dont have the app');
-      }
-
       var deeplinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
       var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
@@ -75,7 +56,7 @@
 
       if (isMobile.iOS() || isMobile.Android()) {
         if (isChrome && isMobile.Android()) {
-          var confirm = confirm("You will open Paxel app");
+          var confirm = window.confirm("You will open Paxel app");
           if (confirm == true) {
             window.location.href = deeplinkUrl;
           } else {
