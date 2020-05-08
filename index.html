@@ -7,6 +7,7 @@
     <meta name="keywords" content="reza ilham, reza, erzailham, erza ilham, ios developer">
     <meta name="description" content="Personal Portfolio">
     <meta name="author" content="reza ilham">
+    <meta name="apple-itunes-app" content="app-id=1372668166, app-argument=https://www.paxel.co/">
     <title>erzailham | Reza Ilham | iOS Developer</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -59,6 +60,7 @@
     });
 
     var callDeeplink = function (deeplinking_url) {
+      alert("Hello! I am an alert box!!");
       if (deeplinking_url != '') {
         var deviceOS = getMobileOperatingSystem()
         var fallbackUrl = deviceOS == 'iOS'? 'https://apps.apple.com/id/app/paxel/id1372668166' : 'https://play.google.com/store/apps/details?id=com.paxel';
@@ -76,6 +78,7 @@
         iframe.src = nativeSchemaUrl; //iOS app schema url
         window.onload = function () {
           document.body.appendChild(iframe);
+          
         }
 
         //IF the App is not install then it will redirect to store.
@@ -89,7 +92,7 @@
 
     function getMobileOperatingSystem() {
       var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
+      alert("Hello! I am an alert box!!22");
       // Windows Phone must come first because its UA also contains "Android"
       if (/windows phone/i.test(userAgent)) {
         return "Windows Phone";
@@ -147,6 +150,7 @@
               I have experience of helping to develop an app for startups from scratch.
             </p>
             <a class="btn btn-dark" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
+            <a class="btn btn-dark" target="_blank" href="paxel://createShipment?promocode=FEBRIANLEMAH">Open Paxel</a>
           </div><!-- /col-md-6 -->
         </div><!-- /row -->
       </div><!-- /container -->
