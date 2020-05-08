@@ -54,61 +54,14 @@
   </script> -->
 
   <script>
-    var deeplinking_url = 'paxel://createShipment';
-    $(document).ready(function () {
-      callDeeplink(deeplinking_url);
-    });
-
-    var callDeeplink = function (deeplinking_url) {
-      alert("Hello! I am an alert box!!");
-      if (deeplinking_url != '') {
-        var deviceOS = getMobileOperatingSystem()
-        var fallbackUrl = deviceOS == 'iOS'? 'https://apps.apple.com/id/app/paxel/id1372668166' : 'https://play.google.com/store/apps/details?id=com.paxel';
-        var iframe = document.createElement("iframe");
-        var nativeSchemaUrl = deeplinking_url;
-        console.log(nativeSchemaUrl);
-
-        iframe.id = "app_call_frame";
-        iframe.style.border = "none";
-        iframe.style.width = "1px";
-        iframe.style.height = "1px";
-        iframe.onload = function () {
-          document.location = nativeSchemaUrl;
-        };
-        iframe.src = nativeSchemaUrl; //iOS app schema url
-        window.onload = function () {
-          document.body.appendChild(iframe);
-          
-        }
-
-        //IF the App is not install then it will redirect to store.
-        setTimeout(function () {
-          console.log('Iframe Removed...');
-          document.getElementById("app_call_frame").remove();
-          window.location = fallbackUrl; //fallback url
-        }, 5000);
-      }
-    };
-
-    function getMobileOperatingSystem() {
-      var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      alert("Hello! I am an alert box!!22");
-      // Windows Phone must come first because its UA also contains "Android"
-      if (/windows phone/i.test(userAgent)) {
-        return "Windows Phone";
-      }
-
-      if (/android/i.test(userAgent)) {
-        return "Android";
-      }
-
-      // iOS detection from: http://stackoverflow.com/a/9039885/177710
-      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-        return "iOS";
-      }
-
-      return "unknown";
-    }
+    // find a <a> element with id a_lnk
+    var lnk = document.getElementById('open_paxel');
+    lnk.onclick = function(e){
+      // do the magic here..
+      // e.target is the object that got the click
+      window.location = e.target.getAttribute('href');
+    return false;
+    }​
   </script>
   <!-- ======== /DEEPLINK APP PAXEL ======== -->
 
@@ -150,7 +103,8 @@
               I have experience of helping to develop an app for startups from scratch.
             </p>
             <a class="btn btn-dark" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
-            <a class="btn btn-dark" target="_blank" href="paxel://createShipment?promocode=FEBRIANLEMAH">Open Paxel</a>
+            <a class="btn btn-dark" target="_blank" onclick="window.location.href='paxel://createShipment?promocode=FEBRIANLEMAH'">Open Paxel with window.location.href</a>
+            <a class="btn btn-dark" id="open_paxel" target="_blank" style="visibility:hidden" href="paxel://createShipment?promocode=FEBRIANLEMAH">Open Paxel with href</a>
           </div><!-- /col-md-6 -->
         </div><!-- /row -->
       </div><!-- /container -->
