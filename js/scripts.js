@@ -19,14 +19,14 @@ $(document).ready(function(){
     var buttonUp = $('.button-up'), //scroll-top btn
         navbarFixedTop = $('.navbar-fixed-top');
     // Adding background for .navbar after scroll more than 220
-    if ($('.navbar').offset().top > 220) {
-      $(navbarFixedTop).addClass('top-nav-collapse');
-      $(buttonUp).fadeIn(300);
-    } else {
-    //Removing all adding styles
-      $(navbarFixedTop).removeClass('top-nav-collapse');
-      $(buttonUp).fadeOut(300);
-    }
+    // if ($('.navbar').offset().top > 220) {
+    //   $(navbarFixedTop).addClass('top-nav-collapse');
+    //   $(buttonUp).fadeIn(300);
+    // } else {
+    // //Removing all adding styles
+    //   $(navbarFixedTop).removeClass('top-nav-collapse');
+    //   $(buttonUp).fadeOut(300);
+    // }
   });
 
   //Close the menu by clicking on the link
