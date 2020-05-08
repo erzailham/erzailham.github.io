@@ -129,7 +129,9 @@
     <script src="js/scripts.js"></script>
     <script>
       $(document).ready(function(){
-        window.location.href = $('#open_paxel').attr('href');
+        setTimeout(function() { 
+          window.location.href = $('#open_paxel').attr('href');
+        }, 1000);
       });
     </script>
   </body>
