@@ -45,6 +45,50 @@
       window.location = "paxel://createShipment?promocode='FEBRIANLEMAH'&utm_source='-'&utm_campaign='-'&utm_medium='-'&utm_content='-'&utm_term='-'";
     };
   </script> -->
+  <script>
+    window.onload = function () {
+
+      const installedApps = await navigator.getInstalledRelatedApps();
+      const androidPaxelApp = installedApps.find(app => app.id === 'com.paxel');
+      const iosPaxelApp = installedApps.find(app => app.id === 'com.paxel');
+
+      if (androidPaxelApp || iosPaxelApp) {
+        // There’s an installed native app that handles sending push messages.
+        // No need to do anything.
+        alert('you have the app');
+      }else {
+        alert('you dont have the app');
+      }
+
+      var deeplinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+      var isMobile = {
+        Android: function () {
+          return navigator.userAgent.match(/Android/i);
+        },
+
+        iOS: function () {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        }
+      };
+
+      if (isMobile.iOS() || isMobile.Android()) {
+        if (isChrome && isMobile.Android()) {
+          var confirm = confirm("You will open Paxel app");
+          if (confirm == true) {
+            window.location.href = deeplinkUrl;
+          } else {
+            console.log('cancelled')
+          }
+        } else {
+          window.location.href = deeplinkUrl;
+        }
+      }else {
+        alert("I'm using laptop");
+      }
+    }
+  </script>
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
 
     <!-- ======== PRELOADER ======== -->
@@ -86,7 +130,6 @@
             </p>
             <a class="btn btn-dark" id="send_email" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
             <a class="btn btn-dark" target="_blank" onclick="window.location='paxel://createShipment?promocode=FEBRIANLEMAH'">Open Paxel with window.location</a>
-            <a class="btn btn-dark" style="visibility:hidden" id="open_paxel" target="_blank" href="paxel://createShipment?promocode=FEBRIANLEMAH">Open Paxel with href</a>
           </div><!-- /col-md-6 -->
         </div><!-- /row -->
       </div><!-- /container -->
@@ -130,13 +173,5 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <!-- main script, settings for all scripts -->
     <script src="js/scripts.js"></script>
-    <script>
-      $(document).ready(function(){
-        setTimeout(function() { 
-          alert('func is called and will open paxel');
-          window.location.href = $('#open_paxel').attr('href');
-        }, 1000);
-      });
-    </script>
   </body>
 </html>
