@@ -1,0 +1,18 @@
+{
+    "name": "Paxel",
+    "short_name": "Paxel",
+    "prefer_related_applications": true,
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.paxel"
+      }
+    ],
+    "icons": [
+      {
+        "src": "paxel-launcher.png",
+        "sizes": "360x360",
+        "type": "image/png"
+      }
+    ]
+  }
