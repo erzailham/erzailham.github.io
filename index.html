@@ -7,10 +7,7 @@
     <meta name="keywords" content="reza ilham, reza, erzailham, erza ilham, ios developer">
     <meta name="description" content="Personal Portfolio">
     <meta name="author" content="reza ilham">
-    <!-- Banner App Store & Play Store -->
     <meta name="apple-itunes-app" content="app-id=1372668166, app-argument=https://www.paxel.co/">
-    <link rel="manifest" href="/manifest.json">
-    <!-- Title -->
     <title>erzailham | Reza Ilham | iOS Developer</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,56 +34,6 @@
     </script>
   </head>
   <body class="no-scroll" data-spy="scroll" data-target="#navbar-collapse-1" data-offset="98">
-
-  <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
-  <script>
-    window.onload = function () {
-      var deepLinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
-      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-
-      var isMobile = {
-        Android: function () {
-          return navigator.userAgent.match(/Android/i);
-        },
-
-        iOS: function () {
-          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        }
-      };
-
-      if (isMobile.iOS() || isMobile.Android()) {
-        if (isMobile.Android()) {
-          if (isChrome){
-            $("#deepLinkModal").modal()
-          }else {
-            window.location.href = deepLinkUrl;
-          }
-        } else {
-          window.location.href = deepLinkUrl;
-        }
-      }else {
-        alert("I'm using laptop");
-      }
-    }
-  </script>
-  <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
-
-    <!-- Modal -->
-    <div class="modal fade bd-example-modal-sm" id="deepLinkModal" tabindex="-1">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p>Open with Paxel App</p>
-          </div>
-          <div class="modal-footer">
-            <a class="btn btn-dark" target="_blank" onclick="window.location='paxel://createShipment?promocode=FEBRIANLEMAH'">Open Paxel with window.location</a>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="window.location='paxel://createShipment?promocode=FEBRIANLEMAH'">Open</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
     <!-- ======== PRELOADER ======== -->
     <div class="preloader">
       <div class="preloader-inner">
@@ -124,7 +71,9 @@
               Lived in the startup world as a mobile developer since 2013, 
               I have experience of helping to develop an app for startups from scratch.
             </p>
-            <a class="btn btn-dark" id="send_email" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
+            <a class="btn btn-dark" target="_blank" href="mailto:erzailham@gmail.com">Contact Me</a>
+            <a class="btn btn-dark" target="_blank" onclick="window.location.href='paxel://createShipment?promocode=FEBRIANLEMAH'">Open Paxel with window.location.href</a>
+            <a class="btn btn-dark" id="open_paxel" target="_blank" style="visibility:hidden" href="paxel://createShipment?promocode=FEBRIANLEMAH">Open Paxel with href</a>
           </div><!-- /col-md-6 -->
         </div><!-- /row -->
       </div><!-- /container -->
