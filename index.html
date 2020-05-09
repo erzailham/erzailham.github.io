@@ -41,39 +41,51 @@
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
   <script>
     window.onload = function () {
-      window.location.href = $('.deeplink_paxel').attr('href');
-      // var deepLinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
-      // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+      var deepLinkUrl = "paxel://createShipment?promocode=FEBRIANLEMAH";
+      var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-      // var isMobile = {
-      //   Android: function () {
-      //     return navigator.userAgent.match(/Android/i);
-      //   },
+      var isMobile = {
+        Android: function () {
+          return navigator.userAgent.match(/Android/i);
+        },
 
-      //   iOS: function () {
-      //     return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-      //   }
-      // };
+        iOS: function () {
+          return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        }
+      };
 
-      // if (isMobile.iOS() || isMobile.Android()) {
-      //   if (isChrome && isMobile.Android()) {
-      //     var confirm = window.confirm("You will open Paxel app");
-      //     if (confirm == true) {
-      //       window.location = document.getElementById('#deeplink_paxel').href;
-      //     } else {
-      //       console.log('cancelled')
-      //     }
-      //   } else {
-      //     window.location.href = deepLinkUrl;
-      //   }
-      // }else {
-      //   alert("I'm using laptop");
-      // }
+      if (isMobile.iOS() || isMobile.Android()) {
+        if (isMobile.Android()) {
+          if (isChrome){
+            $("#deepLinkModal").modal()
+          }else {
+            window.location.href = deepLinkUrl;
+          }
+        } else {
+          window.location.href = deepLinkUrl;
+        }
+      }else {
+        alert("I'm using laptop");
+      }
     }
   </script>
-  <a style="visibility: hidden; height: 0;" class="deeplink_paxel" href="paxel://createShipment?promocode=FEBRIANLEMAH"></a>
   <!-- ======== CHECK IS APP PAXEL INSTALLED ======== -->
 
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" id="deepLinkModal" tabindex="-1">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Open with Paxel App</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="window.location='paxel://createShipment?promocode=FEBRIANLEMAH'">Open</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <!-- ======== PRELOADER ======== -->
     <div class="preloader">
       <div class="preloader-inner">
