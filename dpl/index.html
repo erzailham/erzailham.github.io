@@ -4,9 +4,10 @@
     <meta id="viewport" name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type="text/javascript">
-        $(function () {
-            window.location.href = "paxel://createShipment?promocode=lemah&utm_source=&utm_campaign=&utm_medium=&utm_content=&utm_term=";
-        });
+        window.onload = function () {
+            // Deep link to your app goes here
+            window.location = "paxel://createShipment?promocode=lemah&utm_source=&utm_campaign=&utm_medium=&utm_content=&utm_term=";
+        };
     </script>
     <title>Test: Deep Link to Native App Launch</title>
 </head>
