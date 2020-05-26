@@ -6,21 +6,19 @@
     <script type="text/javascript">
         window.onload = function () {
             // Deep link to your app goes here
-            // window.location = "paxel://createShipment?promocode=lemah&utm_source=&utm_campaign=&utm_medium=&utm_content=&utm_term=";
             triggerAppOpen();
         };
 
         var fallbackToStore = function() {
             window.location.replace('https://play.google.com/store/apps/details?id=com.paxel&hl=en');
         };
-        
+
         var openApp = function() {
             window.location.replace('paxel://createShipment?promocode=lemah&utm_source=&utm_campaign=&utm_medium=&utm_content=&utm_term=');
         };
 
         var triggerAppOpen = function() {
             openApp();
-            setTimeout(fallbackToStore, 250);
         };
     </script>
     <title>Test: Deep Link to Native App Launch</title>
