@@ -1,9 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "paxel",
-    "package_name": "com.paxel",
-    "sha256_cert_fingerprints":
-    ["28:5E:4B:02:57:9A:80:AB:2B:03:3A:FE:D8:DC:85:92:52:B9:5F:7B:41:85:8B:C5:28:26:08:14:9C:6C:CE:00"]
-  }
-}]
