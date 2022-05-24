@@ -1,675 +1,1005 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Hello, I&#x27;m Reza Ilham</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	text-indent: -1.7em;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="8c13266f-a46d-4367-aac2-c9f1bd8e0c52" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📱</span></div><h1 class="page-title">Hello, I&#x27;m Reza Ilham</h1></header><div class="page-body"><figure id="5d516d9c-55c9-458f-9b84-80641b5249fc" class="image"><a href="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/IMG_7193-123.jpg"><img style="width:240px" src="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/IMG_7193-123.jpg"/></a></figure><p id="e42f4768-9de3-4949-9846-9413b6571706" class="">
-</p><blockquote id="9d426aa9-9adc-4c33-ba09-bc3555c816d4" class="">Mobile Engineer based in Jakarta, Indonesia. 
-
-I specialized in native iOS (Swift 🦅 &amp; ObJ-C) and hybrid React Native ⚛️.
-
-Lived in the startup world as a software engineer since 2013, experienced in helping to develop an app for startups from scratch. </blockquote><div id="b81a2f61-f2f6-48d4-8e27-9e2b9872fdf6" class="column-list"><div id="7cf18ee1-f998-479f-8762-c2a864afd059" style="width:33.333333333333336%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="609f727a-9beb-436f-b4d8-0f3a7403195f"><div style="font-size:1.5em"><img class="icon" src="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/bxl-instagram-alt.svg"/></div><div style="width:100%"><a href="http://instagram.com/erzailham">@erzailham</a> </div></figure></div><div id="5c8eb650-354c-4b2c-afcb-95a019e505fc" style="width:33.333333333333336%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9224c9c4-c639-48ae-a7a4-60790603781b"><div style="font-size:1.5em"><img class="icon" src="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/bxl-twitter.svg"/></div><div style="width:100%"><a href="https://twitter.com/dadimdum">@</a><a href="https://twitter.com/erzailham">erzailham</a></div></figure></div><div id="482d19a3-0837-41b0-97e6-9ae77a18dfa7" style="width:33.33333333333333%" class="column"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="501ec626-9bb3-46d2-91bc-14c9a70e78ea"><div style="font-size:1.5em"><img class="icon" src="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/bxl-linkedin.svg"/></div><div style="width:100%"><a href="https://www.linkedin.com/in/erzailham">Linkedin</a></div></figure></div></div><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0cccd0bc-426d-4443-806f-30d7fd3f5d93"><div style="font-size:1.5em"><img class="icon" src="Hello,%20I&#x27;m%20Reza%20Ilham%205d516d9c55c9458f9b8480641b5249fc/bxs-envelope_(2).svg"/></div><div style="width:100%"><mark class="highlight-yellow"><strong>Email: erzailham@gmail.com</strong></mark></div></figure><h1 id="89af7989-534b-49c1-a3d7-89eb0268e178" class="">My Work Experience</h1><hr id="3fed0469-2431-46b5-a1c2-490e1a110347"/><h3 id="3f41e6c1-6c89-438a-9c29-88b7b75c6205" class="">📲 iOS Developer - Aleph Labs</h3><p id="29b7c143-cae3-4683-b737-430c82f5e5de" class=""><mark class="highlight-yellow"><strong>Nov 2020 - Present | Jakarta, Indonesia</strong></mark></p><p id="e1cd4118-7afd-48d1-af01-927ea27ee9d6" class="">Responsible for bug fixing and improving application performance for iOS platform and Continuously discovering, evaluating, and implementing new technologies to maximize development efficiency. I work with a team of 7 iOS Developers.</p><h3 id="db9c7027-a075-4b1d-97f0-fb7c59d8fef1" class="">📲 Mobile Developer - Rebelworks</h3><p id="57caa561-8f63-4972-a159-73abcd5f469a" class=""><mark class="highlight-yellow"><strong>Mar 2017 - Nov 2020 | Jakarta, Indonesia</strong></mark></p><p id="527c3a89-6228-493d-bb05-d70030e6f120" class="">I work more focused on a project called Paxel. Paxel is an application-based logistics startup that carries same-day shipping at flat shipping prices.</p><h3 id="d7ec0a8f-b7de-4cfb-88a9-32b2ba24af27" class="">📲 iOS Developer - PT WGS</h3><p id="ecebbf77-5ee3-4962-9124-e7d3f7c93aa2" class=""><mark class="highlight-yellow"><strong>Oct 2015 - Feb 2017 | Bandung, Indonesia</strong></mark></p><p id="d27ff259-963f-46e5-8322-090cd9bd30b2" class="">Walden Global Services (WGS) is one of the largest enterprise software development companies based in Jakarta &amp; Bandung Indonesia.</p><h3 id="385cf5e0-f77b-4610-a362-e242a552846b" class="">💻 Web Developer - Papertapes</h3><p id="c61e7e3c-8bda-40f6-8049-d810898942c9" class=""><mark class="highlight-yellow"><strong>Jun 2014 - Jul 2015 | Bandung, Indonesia</strong></mark></p><p id="045d7d05-c8c9-4244-be83-ac415046e639" class="">Papertapes is a brand agency from Bandung Indonesia that uses an integrated marketing communication strategy.</p><h3 id="835ec8ea-2bd9-4187-b223-903589fbea52" class="">💻 Web Developer - Bandung Web Media</h3><p id="7ffe7309-ef3c-428d-9117-3b37aa7e8b55" class=""><mark class="highlight-yellow"><strong>Jul 2013 - Jun 2014 | Bandung, Indonesia</strong></mark></p><p id="9512bd0f-b411-4644-8c71-009e2e5e6a0e" class="">BandungWebMedia is a company engaged in the field of website consultants and website-based applications.</p><h1 id="6dad957e-9b6a-4dc4-931d-455dd4e9e2b0" class="">Selected Works</h1><hr id="43b7b6c7-d895-4753-b9a2-4617968252ea"/><div id="24fe6ac3-08ef-4ffe-8942-e8da4febc444" class="column-list"><div id="15fa6eb0-8b26-4387-b390-d6ef9def30b9" style="width:12.5%" class="column"><h2 id="165bb08e-0bb6-4835-be54-0fc02b923799" class="">Paxel</h2></div><div id="4f0ab2d3-390e-49fe-a6ed-9b28be2d2a34" style="width:87.5%" class="column"><figure id="efefa2d1-d93d-4f1d-ab24-340e5f8f5404"><a href="https://apps.apple.com/app/apple-store/id1372668166?mt=8" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://apps.apple.com/app/apple-store/id1372668166?mt=8</div></div></a></figure></div></div><div id="18fb52c8-e1f4-4ce6-ab9e-5b86908d0948" class="column-list"><div id="1bc00dc1-57ee-4893-bc79-8a0412f27b09" style="width:12.5%" class="column"><h2 id="a8dae4ca-e842-439b-ad2e-f0d5ad5ca727" class="">myXL</h2></div><div id="4e5013c1-0fb3-4225-b941-4c818395bc17" style="width:87.5%" class="column"><figure id="6b6639f8-55f0-494d-815f-7b7001b36f10"><a href="https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title"></div></div><div class="bookmark-href">https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076</div></div></a></figure></div></div><div id="bcc1dc84-e3ef-4a2d-aa00-4b35364cecb0" class="column-list"><div id="5d4c5cec-ae68-464b-97de-0f3c3e4be41f" style="width:12.5%" class="column"><h2 id="623e1784-3148-47eb-aa08-e0647560d10a" class="">Unite</h2></div><div id="b999ede9-eb74-4456-bac2-b98e108a59e6" style="width:87.5%" class="column"><figure id="e3191296-0f9a-44d4-8d86-fdf12887d7a2"><a href="https://appadvice.com/app/unite/1121799457" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Unite by Unilever</div><div class="bookmark-description">Merupakan aplikasi digital yang berisi informasi terkini dari perusahaan dan juga media sosial internal yang diperuntukkan bagi seluruh karyawan Unilever Indonesia. Unite merupakan media komunikasi digital untuk &quot;menyatukan&quot; karyawan Unilever yang tersebar di semua site di seluruh Indonesia. Aplikasi ini menawarkan dua fitur utama, yakni Corporate News dan Internal Social Media.</div></div><div class="bookmark-href"><img src="https://appadvice.com/assets-appadvice/AppAdvice/favicon-16x16-fb0bc6d50413c8a49cf7e3d28bd39101a65de423842013c169fdb3e40fa9e417.png" class="icon bookmark-icon"/>https://appadvice.com/app/unite/1121799457</div></div><img src="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/7c/92/85/7c92855a-f673-fb7a-a3cf-a1038c134969/source/512x512bb.jpg" class="bookmark-image"/></a></figure></div></div><div id="d1029d5e-0d83-4e69-b02f-0b8da4335add" class="column-list"><div id="ae122a4e-5ab3-4b02-9f2b-1ee1ed9308a4" style="width:12.5%" class="column"><h3 id="0da67edf-f8cd-491e-a96d-9517f29cc702" class="">Mumu 
-Grocery</h3></div><div id="e8c4feac-b18f-41a9-a136-49ad6b4d143f" style="width:87.5%" class="column"><figure id="0dcda78a-c684-4e30-a733-e85de8d21208"><a href="https://appadvice.com/app/mumu-grocery-deliveries/1080952871" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Mumu Grocery Deliveries by Mumu Nusantara Agung, PT</div><div class="bookmark-description">Mumu adalah layanan grocery delivery dari supermarket terdekat Anda, dalam waktu 1 jam. Bersama MUMU, kini anda dapat menikmati aktifitas bersama keluarga dan rekan. Lebih hemat waktu, bebas antri dan macet.* Beragam Kategori ProdukTersedia lebih dari 25.000 SKU produk dengan beragam kategori. * Jaminan KualitasSemua produk kami terjamin kualitasnya dan siap diantar oleh tim Muver kami yang profesional.</div></div><div class="bookmark-href"><img src="https://appadvice.com/assets-appadvice/AppAdvice/favicon-16x16-fb0bc6d50413c8a49cf7e3d28bd39101a65de423842013c169fdb3e40fa9e417.png" class="icon bookmark-icon"/>https://appadvice.com/app/mumu-grocery-deliveries/1080952871</div></div><img src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/0b/76/38/0b76384a-addc-8321-a66c-9733f843b2fd/source/512x512bb.jpg" class="bookmark-image"/></a></figure></div></div><h1 id="da851c50-f152-44fd-8be1-15cebe5036b7" class="">Where I Learn</h1><hr id="59291f9e-beca-4f48-accc-f80787aba7c7"/><h3 id="3543e77b-8053-441a-afdb-b9af6011f9ee" class="">🏫 Mercu Buana University</h3><p id="6b739c5a-aca0-42e0-b66b-ac11d0b4ce1f" class=""><mark class="highlight-yellow"><strong>2017 - now | Marketing Communication</strong></mark></p><h3 id="58b78add-590b-43bc-9cdb-33ff15d27cca" class="">🎒 SMKN 11 Bandung</h3><p id="2d92b96b-e080-43eb-a9d2-48c6a03fee66" class=""><mark class="highlight-yellow"><strong>2010 - 2013 | Software Engineer</strong></mark></p><h1 id="80e064f6-db6f-4c64-be85-136185aa4913" class="">Music Discography</h1><hr id="1a648e69-cd75-4adb-9cd9-15961d0ed2dc"/><div id="e96bcbca-960f-40e6-acff-93b93bf7ef6c" class="column-list"><div id="e26ba4d4-a3d9-4a9d-9af2-11a30214293c" style="width:50%" class="column"><p id="35dbb331-ceb1-4735-a26e-8c553a871723" class="">I am also a singer/songwriter when in my spare time, here are some songs i made ⇒</p></div><div id="51c77fa9-0e96-43fc-a60d-e3f636453028" style="width:50.000000000000014%" class="column"><figure id="6167b5d9-e424-40fe-af0e-11d2bbe47255"><div class="source"><a href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX">https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX</a></div></figure></div></div></div></article></body></html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hello, I&#x27;m Reza Ilham</title>
+	<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			text-indent: -1.7em;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-opaquegray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+</head>
+
+<body>
+	<article id="8c13266f-a46d-4367-aac2-c9f1bd8e0c52" class="page sans">
+		<header>
+			<div class="page-header-icon undefined"><span class="icon">📱</span></div>
+			<h1 class="page-title">Hello, I&#x27;m Reza Ilham</h1>
+		</header>
+		<div class="page-body">
+			<figure id="5d516d9c-55c9-458f-9b84-80641b5249fc" class="image"><a href="asset/IMG_7193-123.jpg"><img
+						style="width:240px" src="asset/IMG_7193-123.jpg" /></a></figure>
+			<p id="e42f4768-9de3-4949-9846-9413b6571706" class="">
+			</p>
+			<blockquote id="9d426aa9-9adc-4c33-ba09-bc3555c816d4" class="">Mobile Engineer based in Jakarta, Indonesia.
+
+				I specialized in native iOS (Swift 🦅 &amp; ObJ-C) and hybrid React Native ⚛️.
+
+				Lived in the startup world as a software engineer since 2013, experienced in helping to develop an app
+				for startups from scratch. </blockquote>
+			<div id="b81a2f61-f2f6-48d4-8e27-9e2b9872fdf6" class="column-list">
+				<div id="7cf18ee1-f998-479f-8762-c2a864afd059" style="width:33.333333333333336%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+						id="609f727a-9beb-436f-b4d8-0f3a7403195f">
+						<div style="font-size:1.5em"><img class="icon"
+								src="asset/IMG_7193-123.jpg/bxl-instagram-alt.svg" /></div>
+						<div style="width:100%"><a href="http://instagram.com/erzailham">@erzailham</a> </div>
+					</figure>
+				</div>
+				<div id="5c8eb650-354c-4b2c-afcb-95a019e505fc" style="width:33.333333333333336%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+						id="9224c9c4-c639-48ae-a7a4-60790603781b">
+						<div style="font-size:1.5em"><img class="icon" src="asset/bxl-twitter.svg" />
+						</div>
+						<div style="width:100%"><a href="https://twitter.com/dadimdum">@</a><a
+								href="https://twitter.com/erzailham">erzailham</a></div>
+					</figure>
+				</div>
+				<div id="482d19a3-0837-41b0-97e6-9ae77a18dfa7" style="width:33.33333333333333%" class="column">
+					<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+						id="501ec626-9bb3-46d2-91bc-14c9a70e78ea">
+						<div style="font-size:1.5em"><img class="icon" src="asset/bxl-linkedin.svg" />
+						</div>
+						<div style="width:100%"><a href="https://www.linkedin.com/in/erzailham">Linkedin</a></div>
+					</figure>
+				</div>
+			</div>
+			<figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex"
+				id="0cccd0bc-426d-4443-806f-30d7fd3f5d93">
+				<div style="font-size:1.5em"><img class="icon" src="asset/bxs-envelope_(2).svg" />
+				</div>
+				<div style="width:100%"><mark class="highlight-yellow"><strong>Email:
+							erzailham@gmail.com</strong></mark></div>
+			</figure>
+			<h1 id="89af7989-534b-49c1-a3d7-89eb0268e178" class="">My Work Experience</h1>
+			<hr id="3fed0469-2431-46b5-a1c2-490e1a110347" />
+			<h3 id="3f41e6c1-6c89-438a-9c29-88b7b75c6205" class="">📲 iOS Developer - Aleph Labs</h3>
+			<p id="29b7c143-cae3-4683-b737-430c82f5e5de" class=""><mark class="highlight-yellow"><strong>Nov 2020 -
+						Present | Jakarta, Indonesia</strong></mark></p>
+			<p id="e1cd4118-7afd-48d1-af01-927ea27ee9d6" class="">Responsible for bug fixing and improving application
+				performance for iOS platform and Continuously discovering, evaluating, and implementing new technologies
+				to maximize development efficiency. I work with a team of 7 iOS Developers.</p>
+			<h3 id="db9c7027-a075-4b1d-97f0-fb7c59d8fef1" class="">📲 Mobile Developer - Rebelworks</h3>
+			<p id="57caa561-8f63-4972-a159-73abcd5f469a" class=""><mark class="highlight-yellow"><strong>Mar 2017 - Nov
+						2020 | Jakarta, Indonesia</strong></mark></p>
+			<p id="527c3a89-6228-493d-bb05-d70030e6f120" class="">I work more focused on a project called Paxel. Paxel
+				is an application-based logistics startup that carries same-day shipping at flat shipping prices.</p>
+			<h3 id="d7ec0a8f-b7de-4cfb-88a9-32b2ba24af27" class="">📲 iOS Developer - PT WGS</h3>
+			<p id="ecebbf77-5ee3-4962-9124-e7d3f7c93aa2" class=""><mark class="highlight-yellow"><strong>Oct 2015 - Feb
+						2017 | Bandung, Indonesia</strong></mark></p>
+			<p id="d27ff259-963f-46e5-8322-090cd9bd30b2" class="">Walden Global Services (WGS) is one of the largest
+				enterprise software development companies based in Jakarta &amp; Bandung Indonesia.</p>
+			<h3 id="385cf5e0-f77b-4610-a362-e242a552846b" class="">💻 Web Developer - Papertapes</h3>
+			<p id="c61e7e3c-8bda-40f6-8049-d810898942c9" class=""><mark class="highlight-yellow"><strong>Jun 2014 - Jul
+						2015 | Bandung, Indonesia</strong></mark></p>
+			<p id="045d7d05-c8c9-4244-be83-ac415046e639" class="">Papertapes is a brand agency from Bandung Indonesia
+				that uses an integrated marketing communication strategy.</p>
+			<h3 id="835ec8ea-2bd9-4187-b223-903589fbea52" class="">💻 Web Developer - Bandung Web Media</h3>
+			<p id="7ffe7309-ef3c-428d-9117-3b37aa7e8b55" class=""><mark class="highlight-yellow"><strong>Jul 2013 - Jun
+						2014 | Bandung, Indonesia</strong></mark></p>
+			<p id="9512bd0f-b411-4644-8c71-009e2e5e6a0e" class="">BandungWebMedia is a company engaged in the field of
+				website consultants and website-based applications.</p>
+			<h1 id="6dad957e-9b6a-4dc4-931d-455dd4e9e2b0" class="">Selected Works</h1>
+			<hr id="43b7b6c7-d895-4753-b9a2-4617968252ea" />
+			<div id="24fe6ac3-08ef-4ffe-8942-e8da4febc444" class="column-list">
+				<div id="15fa6eb0-8b26-4387-b390-d6ef9def30b9" style="width:12.5%" class="column">
+					<h2 id="165bb08e-0bb6-4835-be54-0fc02b923799" class="">Paxel</h2>
+				</div>
+				<div id="4f0ab2d3-390e-49fe-a6ed-9b28be2d2a34" style="width:87.5%" class="column">
+					<figure id="efefa2d1-d93d-4f1d-ab24-340e5f8f5404"><a
+							href="https://apps.apple.com/app/apple-store/id1372668166?mt=8" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title"></div>
+								</div>
+								<div class="bookmark-href">https://apps.apple.com/app/apple-store/id1372668166?mt=8
+								</div>
+							</div>
+						</a></figure>
+				</div>
+			</div>
+			<div id="18fb52c8-e1f4-4ce6-ab9e-5b86908d0948" class="column-list">
+				<div id="1bc00dc1-57ee-4893-bc79-8a0412f27b09" style="width:12.5%" class="column">
+					<h2 id="a8dae4ca-e842-439b-ad2e-f0d5ad5ca727" class="">myXL</h2>
+				</div>
+				<div id="4e5013c1-0fb3-4225-b941-4c818395bc17" style="width:87.5%" class="column">
+					<figure id="6b6639f8-55f0-494d-815f-7b7001b36f10"><a
+							href="https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076"
+							class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title"></div>
+								</div>
+								<div class="bookmark-href">
+									https://apps.apple.com/id/app/myxl-cek-kuota-beli-paket-xl/id683141076</div>
+							</div>
+						</a></figure>
+				</div>
+			</div>
+			<div id="bcc1dc84-e3ef-4a2d-aa00-4b35364cecb0" class="column-list">
+				<div id="5d4c5cec-ae68-464b-97de-0f3c3e4be41f" style="width:12.5%" class="column">
+					<h2 id="623e1784-3148-47eb-aa08-e0647560d10a" class="">Unite</h2>
+				</div>
+				<div id="b999ede9-eb74-4456-bac2-b98e108a59e6" style="width:87.5%" class="column">
+					<figure id="e3191296-0f9a-44d4-8d86-fdf12887d7a2"><a
+							href="https://appadvice.com/app/unite/1121799457" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">Unite by Unilever</div>
+									<div class="bookmark-description">Merupakan aplikasi digital yang berisi informasi
+										terkini dari perusahaan dan juga media sosial internal yang diperuntukkan bagi
+										seluruh karyawan Unilever Indonesia. Unite merupakan media komunikasi digital
+										untuk &quot;menyatukan&quot; karyawan Unilever yang tersebar di semua site di
+										seluruh Indonesia. Aplikasi ini menawarkan dua fitur utama, yakni Corporate News
+										dan Internal Social Media.</div>
+								</div>
+								<div class="bookmark-href"><img
+										src="https://appadvice.com/assets-appadvice/AppAdvice/favicon-16x16-fb0bc6d50413c8a49cf7e3d28bd39101a65de423842013c169fdb3e40fa9e417.png"
+										class="icon bookmark-icon" />https://appadvice.com/app/unite/1121799457</div>
+							</div><img
+								src="https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/7c/92/85/7c92855a-f673-fb7a-a3cf-a1038c134969/source/512x512bb.jpg"
+								class="bookmark-image" />
+						</a></figure>
+				</div>
+			</div>
+			<div id="d1029d5e-0d83-4e69-b02f-0b8da4335add" class="column-list">
+				<div id="ae122a4e-5ab3-4b02-9f2b-1ee1ed9308a4" style="width:12.5%" class="column">
+					<h3 id="0da67edf-f8cd-491e-a96d-9517f29cc702" class="">Mumu
+						Grocery</h3>
+				</div>
+				<div id="e8c4feac-b18f-41a9-a136-49ad6b4d143f" style="width:87.5%" class="column">
+					<figure id="0dcda78a-c684-4e30-a733-e85de8d21208"><a
+							href="https://appadvice.com/app/mumu-grocery-deliveries/1080952871" class="bookmark source">
+							<div class="bookmark-info">
+								<div class="bookmark-text">
+									<div class="bookmark-title">Mumu Grocery Deliveries by Mumu Nusantara Agung, PT
+									</div>
+									<div class="bookmark-description">Mumu adalah layanan grocery delivery dari
+										supermarket terdekat Anda, dalam waktu 1 jam. Bersama MUMU, kini anda dapat
+										menikmati aktifitas bersama keluarga dan rekan. Lebih hemat waktu, bebas antri
+										dan macet.* Beragam Kategori ProdukTersedia lebih dari 25.000 SKU produk dengan
+										beragam kategori. * Jaminan KualitasSemua produk kami terjamin kualitasnya dan
+										siap diantar oleh tim Muver kami yang profesional.</div>
+								</div>
+								<div class="bookmark-href"><img
+										src="https://appadvice.com/assets-appadvice/AppAdvice/favicon-16x16-fb0bc6d50413c8a49cf7e3d28bd39101a65de423842013c169fdb3e40fa9e417.png"
+										class="icon bookmark-icon" />https://appadvice.com/app/mumu-grocery-deliveries/1080952871
+								</div>
+							</div><img
+								src="https://is2-ssl.mzstatic.com/image/thumb/Purple122/v4/0b/76/38/0b76384a-addc-8321-a66c-9733f843b2fd/source/512x512bb.jpg"
+								class="bookmark-image" />
+						</a></figure>
+				</div>
+			</div>
+			<h1 id="da851c50-f152-44fd-8be1-15cebe5036b7" class="">Where I Learn</h1>
+			<hr id="59291f9e-beca-4f48-accc-f80787aba7c7" />
+			<h3 id="3543e77b-8053-441a-afdb-b9af6011f9ee" class="">🏫 Mercu Buana University</h3>
+			<p id="6b739c5a-aca0-42e0-b66b-ac11d0b4ce1f" class=""><mark class="highlight-yellow"><strong>2017 - now |
+						Marketing Communication</strong></mark></p>
+			<h3 id="58b78add-590b-43bc-9cdb-33ff15d27cca" class="">🎒 SMKN 11 Bandung</h3>
+			<p id="2d92b96b-e080-43eb-a9d2-48c6a03fee66" class=""><mark class="highlight-yellow"><strong>2010 - 2013 |
+						Software Engineer</strong></mark></p>
+			<h1 id="80e064f6-db6f-4c64-be85-136185aa4913" class="">Music Discography</h1>
+			<hr id="1a648e69-cd75-4adb-9cd9-15961d0ed2dc" />
+			<div id="e96bcbca-960f-40e6-acff-93b93bf7ef6c" class="column-list">
+				<div id="e26ba4d4-a3d9-4a9d-9af2-11a30214293c" style="width:50%" class="column">
+					<p id="35dbb331-ceb1-4735-a26e-8c553a871723" class="">I am also a singer/songwriter when in my spare
+						time, here are some songs i made ⇒</p>
+				</div>
+				<div id="51c77fa9-0e96-43fc-a60d-e3f636453028" style="width:50.000000000000014%" class="column">
+					<figure id="6167b5d9-e424-40fe-af0e-11d2bbe47255">
+						<div class="source"><a
+								href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX">https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX</a>
+						</div>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</article>
+</body>
+
+</html>
