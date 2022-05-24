@@ -1,16 +1,9 @@
 {
     "applinks": {
-        "apps": [],
         "details": [
             {
-                "appID": "TN44P3E6DY.com.byu.id",
-                "paths": [
-                    "/app/ios/*",
-                    "/deeplink/*",
-                    "/referral/*",
-                    "/app/mobile/*",
-                    "/en/referral/*",
-                    "/id/referral/*"
+                "appIDs": [
+                    "TN44P3E6DY.com.byu.id"
                 ],
                 "components": [
                     {
@@ -42,6 +35,11 @@
         ]
     },
     "webcredentials": {
+        "apps": [
+            "TN44P3E6DY.com.byu.idp"
+        ]
+    },
+    "appclips": {
         "apps": [
             "TN44P3E6DY.com.byu.id"
         ]
