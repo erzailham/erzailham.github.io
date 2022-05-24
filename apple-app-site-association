@@ -1,0 +1,49 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "TN44P3E6DY.com.byu.id",
+                "paths": [
+                    "/app/ios/*",
+                    "/deeplink/*",
+                    "/referral/*",
+                    "/app/mobile/*",
+                    "/en/referral/*",
+                    "/id/referral/*"
+                ],
+                "components": [
+                    {
+                        "/": "/app/ios/*",
+                        "comment": "Matches any URL whose path starts with app ios/"
+                    },
+                    {
+                        "/": "/deeplink/*",
+                        "comment": "Matches any URL whose path starts with app ios/"
+                    },
+                    {
+                        "/": "/app/mobile/*",
+                        "comment": "Matches any URL whose path starts with app ios/"
+                    },
+                    {
+                        "/": "/en/referral/*",
+                        "comment": "Matches any URL whose path starts with referral from web /"
+                    },
+                    {
+                        "/": "/id/referral/*",
+                        "comment": "Matches any URL whose path starts with referral from web /"
+                    },
+                    {
+                        "/": "/referral/*",
+                        "comment": "Matches any URL whose path starts with referral/"
+                    }
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [
+            "TN44P3E6DY.com.byu.id"
+        ]
+    }
+}
