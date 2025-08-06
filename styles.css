@@ -14,7 +14,7 @@
   border-right: 2px solid #d4d4d4;
   width: 0;
   opacity: 0;
-  animation: typing 1.2s steps(20, end) forwards, blink-caret 0.6s step-end infinite, fadeIn 0.2s ease-in forwards;
+  animation: typing 1.2s steps(20, end) forwards, blink-caret 0.6s step-end infinite;
 }
 
 .typing-text.line-1 {
