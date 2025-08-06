@@ -90,15 +90,13 @@
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  filter: grayscale(50%);
 }
+
 
 .profile-image:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-  filter: grayscale(100%);
 }
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .about-section {
