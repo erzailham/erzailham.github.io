@@ -44,16 +44,16 @@
           <a href="#" class="nav-link text-custom-text no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up underline decoration-2 underline-offset-4">(home)</a>
         </li>
         <li class="font-medium text-sm tracking-wider">
-          <a href="#" class="nav-link text-custom-secondary no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(about)</a>
+          <a href="#about" class="nav-link text-custom-secondary no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(about)</a>
         </li>
         <li class="font-medium text-sm tracking-wider">
-          <a href="#" class="nav-link text-custom-accent no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(contact)</a>
+          <a href="#contact" class="nav-link text-custom-accent no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(contact)</a>
         </li>
       </ul>
     </nav>
 
     <!-- Main Content -->
-    <main class="flex-1 flex flex-col justify-between min-h-[calc(100vh-120px)]">
+    <main id="home" class="flex-1 flex flex-col justify-between min-h-[calc(100vh-120px)]">
       <!-- Hero Image -->
       <div class="flex justify-center items-center flex-1 mb-8">
         <img src="assets/images/hero.png" alt="Hero illustration" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 object-contain opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
@@ -121,6 +121,59 @@
       const line2 = document.querySelector('.typing-text.line-2');
       if (line2) line2.classList.add('complete');
     }, 3200); // 2s delay + 1.2s typing duration
+  </script>
+
+  <!-- Smooth Scrolling Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all navigation links
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if (targetSection) {
+            // Smooth scroll to target section
+            targetSection.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            
+            // Update active nav link
+            navLinks.forEach(navLink => {
+              navLink.classList.remove('underline', 'decoration-2', 'underline-offset-4');
+            });
+            this.classList.add('underline', 'decoration-2', 'underline-offset-4');
+          }
+        });
+      });
+      
+      // Update active nav based on scroll position
+      window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('main, section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id') || 'home';
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('underline', 'decoration-2', 'underline-offset-4');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('underline', 'decoration-2', 'underline-offset-4');
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
