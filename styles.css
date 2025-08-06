@@ -1,0 +1,62 @@
+/* SF Mono font stack for Xcode-like appearance */
+
+/* Animation delays for staggered entrance */
+.nav-link:nth-child(1) { animation-delay: 0.1s; }
+.nav-link:nth-child(2) { animation-delay: 0.2s; }
+.nav-link:nth-child(3) { animation-delay: 0.3s; }
+.nav-link:nth-child(4) { animation-delay: 0.4s; }
+.hero-text { animation-delay: 0.6s; }
+
+/* Enhanced Typewriter Animation */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #d4d4d4;
+  width: 0;
+  animation: typing 1.2s steps(20, end) forwards, blink-caret 0.6s step-end infinite;
+}
+
+.typing-text.line-1 {
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+.typing-text.line-2 {
+  animation-delay: 2s;
+  animation-fill-mode: both;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #d4d4d4; }
+}
+
+/* Hide cursor after typing is complete */
+.typing-text.line-1.complete {
+  border-right: none;
+}
+
+.typing-text.line-2.complete {
+  border-right: none;
+}
+
+/* Pause between lines */
+.typing-text.line-2 {
+  animation-delay: 2s;
+}
+
+/* Smooth fade in for each line */
+.typing-text {
+  opacity: 0;
+  animation: typing 1.2s steps(20, end) forwards, blink-caret 0.6s step-end infinite, fadeIn 0.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
