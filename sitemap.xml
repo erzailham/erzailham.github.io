@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://erzailham.github.io/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/profile.jpg</image:loc>
+      <image:caption>Reza Ilham (erza.™) - Indonesian iOS developer and indie musician</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/hero.png</image:loc>
+      <image:caption>erza.™ logo - minimalist geometric design</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/prodia.PNG</image:loc>
+      <image:caption>U by Prodia health diagnostics iOS app interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/myxl.PNG</image:loc>
+      <image:caption>myXL telco service iOS app interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/paxel.PNG</image:loc>
+      <image:caption>Paxel courier and delivery iOS app interface</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/coffee.jpg</image:loc>
+      <image:caption>Coffee single album cover by erza.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/oh-shit-im-getting-old.jpg</image:loc>
+      <image:caption>Oh Shit I'm Getting Old single album cover by erza.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://erzailham.github.io/assets/images/again-and-again.jpg</image:loc>
+      <image:caption>Again and Again single album cover by erza.</image:caption>
+    </image:image>
+  </url>
+</urlset>
