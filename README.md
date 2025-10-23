@@ -31,6 +31,12 @@ Healthcare appointment booking and medical record management:
 - **Features**: Doctor booking, medical history, lab results, telemedicine consultations
 - **Role**: Frontend development with emphasis on accessibility and HIPAA compliance
 
+### Slicebill
+Bill splitting and expense management platform for groups and roommates:
+- **Tech Stack**: Swift, SwiftUI, Firebase, Core Data
+- **Features**: Smart bill splitting, receipt scanning, payment tracking, group expense management, push notifications, expense analytics
+- **Role**: iOS development lead, architecting the app from ground up with focus on intuitive UX and real-time synchronization
+
 ## 🎨 Design Philosophy
 
 - **Minimalist Approach**: Clean, uncluttered design focusing on content
