@@ -5,7 +5,7 @@
 # Editor
 .cursor
 
-# Claude Code — local tooling, tidak perlu publik
+# Claude Code
 .claude/
 .agents/
 .impeccable/
