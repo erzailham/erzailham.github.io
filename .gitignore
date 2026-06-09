@@ -1,5 +1,16 @@
-# Ignore Mac DS_Store files
+# System
 .DS_Store
 **/.DS_Store
-/docs
+
+# Editor
 .cursor
+
+# Claude Code — local tooling, tidak perlu publik
+.claude/
+.agents/
+.impeccable/
+skills-lock.json
+
+# Internal planning docs
+DESIGN.md
+PRODUCT.md
