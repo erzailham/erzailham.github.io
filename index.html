@@ -46,7 +46,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Apply saved theme before paint to prevent flash -->
@@ -128,7 +128,7 @@
 
     <!-- Apps -->
     <section id="apps" class="section section-apps" aria-label="iOS apps">
-      <p class="section-label reveal-section">apps</p>
+      <h2 class="section-label reveal-section">apps</h2>
 
       <div class="app-list">
 
@@ -221,7 +221,7 @@
 
     <!-- Projects -->
     <section id="experiments" class="section section-projects" aria-label="Side projects">
-      <p class="section-label reveal-section">experiments</p>
+      <h2 class="section-label reveal-section">experiments</h2>
 
       <div class="project-list">
 
@@ -240,12 +240,28 @@
           </div>
         </div>
 
+        <div class="project-row stagger-item" style="--stagger-i: 1" role="button" tabindex="0" aria-expanded="false" aria-controls="project-detail-2">
+          <div class="project-row-header">
+            <span class="project-name">hotreloads</span>
+            <span class="project-tag">tiktok · ai content</span>
+            <span class="project-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="project-detail-2" class="project-detail" aria-hidden="true">
+            <div class="project-detail-inner">
+              <p class="project-desc">a content channel covering ai tools, ai news, and coding — built for developers who want to stay current without the noise. sharing what's actually useful, not just what's trending.</p>
+              <p class="project-tech">TikTok · Instagram</p>
+              <a href="https://tiktok.com/@hotreloads" class="project-link" target="_blank" rel="noopener noreferrer">@hotreloads on TikTok ↗</a>
+              <a href="https://instagram.com/hotreloads" class="project-link" target="_blank" rel="noopener noreferrer">@hotreloads on Instagram ↗</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Music -->
     <section id="music" class="section section-music" aria-label="Music">
-      <p class="section-label reveal-section">music</p>
+      <h2 class="section-label reveal-section">music</h2>
 
       <div class="track-list" role="list">
 
@@ -299,7 +315,7 @@
 
     <!-- Writing -->
     <section id="writing" class="section section-writing" aria-label="Writing">
-      <p class="section-label reveal-section">writing</p>
+      <h2 class="section-label reveal-section">writing</h2>
 
       <div class="writing-list" role="list">
 
@@ -325,7 +341,7 @@
 
     <!-- Stack -->
     <section id="stack" class="section section-stack" aria-label="Tech stack">
-      <p class="section-label reveal-section">stack</p>
+      <h2 class="section-label reveal-section">stack</h2>
 
       <div class="stack-groups">
 
@@ -365,6 +381,7 @@
 
     <!-- Reach -->
     <section id="reach" class="section-reach" aria-label="Contact">
+      <h2 class="visually-hidden">reach</h2>
 
       <a href="mailto:hi@erzailham.com" class="email-link reveal-section" aria-label="Send email to hi@erzailham.com">
         <span class="email-text">hi@erzailham.com</span>
@@ -518,6 +535,8 @@
 
     /* ---- Scroll reveal ---- */
     function initReveal() {
+      document.documentElement.classList.add('js-reveal');
+
       if (!('IntersectionObserver' in window)) {
         document.querySelectorAll('.reveal-section, .stagger-item').forEach(function (el) {
           el.classList.add('is-visible');
