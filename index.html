@@ -1,435 +1,605 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary Meta Tags -->
-  <title>erza.™ - iOS Developer & Musician | Composing Clean Code and Honest Melodies</title>
-  <meta name="title" content="erza.™ - iOS Developer & Musician | Composing Clean Code and Honest Melodies">
-  <meta name="description" content="Portfolio of Reza Ilham (erza.™), an Indonesian iOS developer with 10+ years experience building Swift apps for millions of users, and indie musician creating emo lo-fi music. Explore mobile apps, music releases, and creative works.">
-  <meta name="keywords" content="iOS developer, Swift developer, SwiftUI, UIKit, mobile app development, indie musician, emo lo-fi, Indonesian developer, Reza Ilham, erza, mobile apps, music production">
+
+  <title>reza ilham — ios developer &amp; musician</title>
+  <meta name="title" content="reza ilham — ios developer &amp; musician">
+  <meta name="description" content="erza.™ is the work of reza ilham: indonesian ios developer and indie musician. swift apps, emo lo-fi songs.">
   <meta name="author" content="Reza Ilham">
   <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
   <link rel="canonical" href="https://erzailham.github.io/">
-  
-  <!-- Open Graph / Facebook -->
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://erzailham.github.io/">
-  <meta property="og:title" content="erza.™ - iOS Developer & Musician | Composing Clean Code and Honest Melodies">
-  <meta property="og:description" content="Portfolio of Reza Ilham (erza.™), an Indonesian iOS developer with 10+ years experience building Swift apps for millions of users, and indie musician creating emo lo-fi music.">
+  <meta property="og:title" content="reza ilham — ios developer &amp; musician">
+  <meta property="og:description" content="erza.™ is the work of reza ilham: indonesian ios developer and indie musician.">
   <meta property="og:image" content="https://erzailham.github.io/assets/images/profile.jpg">
-  <meta property="og:site_name" content="erza.™">
-  <meta property="og:locale" content="en_US">
-  
-  <!-- Twitter -->
+
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://erzailham.github.io/">
-  <meta property="twitter:title" content="erza.™ - iOS Developer & Musician">
-  <meta property="twitter:description" content="Portfolio of Reza Ilham (erza.™), an Indonesian iOS developer with 10+ years experience and indie musician.">
-  <meta property="twitter:image" content="https://erzailham.github.io/assets/images/profile.jpg">
+  <meta property="twitter:title" content="reza ilham — ios developer &amp; musician">
   <meta property="twitter:creator" content="@erzailham">
-  
-  <!-- Favicon -->
+
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/profile.jpg">
-  
-  <!-- Structured Data / JSON-LD -->
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Reza Ilham",
     "alternateName": "erza.™",
-    "description": "Indonesian iOS developer and musician. Crafting digital experiences and composing melodies.",
+    "description": "Indonesian iOS developer and musician.",
     "url": "https://erzailham.github.io/",
-    "image": "https://erzailham.github.io/assets/images/profile.jpg",
     "email": "hi@erzailham.com",
     "jobTitle": "iOS Developer",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelance"
-    },
     "sameAs": [
       "https://github.com/erzailham",
       "https://linkedin.com/in/erzailham",
       "https://instagram.com/erzailham",
       "https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX",
       "https://youtube.com/@erza"
-    ],
-    "knowsAbout": ["iOS Development", "Swift", "SwiftUI", "UIKit", "MVVM", "VIPER", "Mobile App Development", "Music Production", "Songwriting"],
-    "nationality": {
-      "@type": "Country",
-      "name": "Indonesia"
-    }
+    ]
   }
   </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "erza.™ Portfolio",
-    "url": "https://erzailham.github.io/",
-    "description": "Portfolio website showcasing iOS development projects and music releases by Reza Ilham (erza.™)",
-    "author": {
-      "@type": "Person",
-      "name": "Reza Ilham"
-    }
-  }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Apply saved theme before paint to prevent flash -->
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            'sf-mono': ['SF Mono', 'Monaco', 'Menlo', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
-          },
-          colors: {
-            'custom-bg': '#1e1e1e',
-            'custom-text': '#A167E6',
-            'custom-hover': '#FC5FA3',
-            'custom-accent': '#FC5FA3',
-            'custom-secondary': '#67B7A4',
-          },
-          animation: {
-            'fade-in-up': 'fadeInUp 0.8s ease forwards',
-          },
-          keyframes: {
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
+    (function() {
+      var t = localStorage.getItem('erza-theme') || 'light';
+      document.documentElement.dataset.theme = t;
+    })();
   </script>
 </head>
-<body class="bg-custom-bg font-sf-mono min-h-screen relative overflow-x-hidden">
-  <div class="max-w-6xl mx-auto px-8 relative min-h-screen">
-    <!-- Navigation -->
-    <nav class="pt-8 pb-4 mb-8">
-      <ul class="flex justify-between items-center gap-8 m-0 p-0 list-none">
-        <li class="font-medium text-- tracking-wider">
-          <a href="#home" class="nav-link text-custom-accent no-underline transition-all duration-300 hover:text-custom-text opacity-0 animate-fade-in-up underline decoration-2 underline-offset-4">erza.™</a>
-        </li>
-        <li class="font-medium text-sm tracking-wider">
-          <a href="#about" class="nav-link text-custom-secondary no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(about)</a>
-        </li>
-        <li class="font-medium text-sm tracking-wider">
-          <a href="#work" class="nav-link text-custom-text no-underline transition-all duration-300 hover:text-custom-hover opacity-0 animate-fade-in-up">(code & chords)</a>
-        </li>
-      </ul>
-    </nav>
+<body>
+  <a href="#apps" class="skip-link">skip to content</a>
 
-    <!-- Main Content -->
-    <main id="home" class="flex-1 flex flex-col justify-between min-h-[calc(100vh-120px)]">
-      <!-- Hero Image -->
-      <div class="flex justify-center items-center flex-1 mb-8">
-        <img src="assets/images/hero.png" alt="erza.™ logo - minimalist geometric design representing the intersection of code and music" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 object-contain opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
+  <!-- Top navigation -->
+  <nav class="top-nav" aria-label="Site navigation">
+    <div class="top-nav-inner">
+      <a href="#opening" class="nav-mark" aria-label="erza.™ — back to top">e™</a>
+      <div class="nav-links">
+        <a href="#apps"      class="nav-link" data-target="apps">apps</a>
+        <a href="#experiments"  class="nav-link" data-target="experiments">experiments</a>
+        <a href="#music"     class="nav-link" data-target="music">music</a>
+        <a href="#writing"   class="nav-link" data-target="writing">writing</a>
+        <a href="#stack"     class="nav-link" data-target="stack">stack</a>
+        <a href="#reach"     class="nav-link" data-target="reach">reach</a>
       </div>
-      
-      <!-- Typography Section -->
-      <div class="mt-auto pb-12">
-        <h1 class="hero-text text-lg font-medium m-0 tracking-tight opacity-0 animate-fade-in-up">
-          <div>
-            <span class="typing-text text-custom-accent line-1">writing code in swift.</span>
-          </div>
-          <div>
-            <span class="typing-text text-custom-text line-2">writing feelings in chords.</span>
-          </div>
-        </h1>
+      <div class="theme-switch" role="group" aria-label="Color theme">
+        <button class="theme-btn" data-theme-btn="dark"  type="button" aria-pressed="false">dark</button>
+        <button class="theme-btn" data-theme-btn="light" type="button" aria-pressed="true">light</button>
       </div>
-    </main>
+    </div>
+  </nav>
 
-    <!-- About Section -->
-    <section id="about" class="about-section py-16 opacity-0 animate-fade-in-up" style="animation-delay: 0.8s;">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
-        <!-- Left Column - Main Bio -->
-        <div class="about-bio">
-          <p class="bio-text text-custom-text leading-relaxed">
-            <strong class="text-custom-accent">erza.™</strong> is the creative work of <em>reza ilham</em>, indonesian ios developer and musician. crafting digital experiences and composing melodies.
-          </p>
-          <p class="bio-footnote text-sm text-gray-400 mt-4">
-            * ilham (il-'ham) from arabic means inspiration, divine guidance.
-          </p>
-        </div>
+  <main class="main">
 
-        <!-- Middle Column - Experience & Achievements -->
-        <div class="about-experience">
-          <p class="experience-text text-custom-secondary leading-relaxed">
-            with 10+ years of experience, i've built swift used by millions from logistics to healthcare.
-            
-          </p>
-          <p class="experience-text text-custom-secondary leading-relaxed mt-4">
-            i write code like i write songs: with rhythm, structure, and soul.
-          </p>
-        </div>
-
-        <!-- Right Column - Profile Image -->
-        <div class="about-profile">
-          <div class="profile-image-container">
-            <img src="assets/images/profile.jpg" alt="Reza Ilham (erza.™) - Indonesian iOS developer and indie musician portrait" class="profile-image rounded-lg object-cover shadow-lg">
-          </div>
-        </div>
+    <!-- Opening -->
+    <section id="opening" class="section-opening" aria-label="Introduction">
+      <img src="assets/images/profile.jpg" alt="Reza Ilham" class="profile-img">
+      <h1 class="opening-name">reza ilham</h1>
+      <div class="opening-lines">
+        <p class="opening-line opening-line--1">writing code in swift.</p>
+        <p class="opening-line opening-line--2">writing feelings in chords.</p>
       </div>
-    </section>
+      <p class="opening-bio">reza ilham. usually called erza that became an alias a long time ago. based in bandung/jakarta, building ios apps by day, recording songs by night. 10+ years shipping apps across health, telco, and logistics.</p>
+      <a href="#reach" class="cta-btn">reach out ↗</a>
+      <div class="opening-social" aria-label="Social links">
 
-    <!-- Work Section -->
-    <section id="work" class="work-section py-16 opacity-0 animate-fade-in-up" style="animation-delay: 1.0s;">
-      <!-- Mobile Apps Portfolio -->
-      <div class="apps-portfolio mb-20">
-        <h2 class="section-title text-3xl md:text-4xl font-medium text-custom-accent mb-12 text-center">appography</h2>
-        
-        <div class="space-y-16">
-          <!-- App 1 -->
-          <div class="app-row flex flex-col lg:flex-row items-center gap-12">
-            <div class="app-mockup flex justify-center lg:justify-start">
-              <div class="mobile-frame bg-gray-800 rounded-3xl p-2 shadow-2xl">
-                <img src="assets/images/prodia.PNG" alt="U by Prodia health diagnostics iOS app - SwiftUI interface showing medical test results dashboard and health tracking features">
-              </div>
-            </div>
-            <div class="app-item flex-1">
-              <h3 class="app-title text-xl font-medium text-custom-text mb-3">🧬 health diagnostics platform</h3>
-              <p class="app-description text-custom-secondary leading-relaxed">
-                i worked as the iOS lead on a healthcare app, using SwiftUI and MVVM to build clear, accessible interfaces.
-                most of my time went into building reusable components, improving performance, and making sure the UI made sense for real people.  
-                it was a team effort, and i helped guide the direction from development to production.
-              </p>
-              <div class="app-tech text-sm text-gray-400 mt-2">
-                SwiftUI • MVVM
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 2 -->
-          <div class="app-row flex flex-col lg:flex-row items-center gap-12">
-            <div class="app-mockup flex justify-center lg:justify-start">
-              <div class="mobile-frame bg-gray-800 rounded-3xl p-2 shadow-2xl">
-                <img src="assets/images/myxl.PNG" alt="myXL telco service iOS app - UIKit interface displaying data plans, account management, and mobile service features used by millions daily">
-              </div>
-            </div>
-            <div class="app-item flex-1">
-              <h3 class="app-title text-xl font-medium text-custom-text mb-3">📶 Telco Service App</h3>
-              <p class="app-description text-custom-secondary leading-relaxed">
-                i worked on the iOS team for a large-scale telco app used by millions of people daily.
-                built with UIKit and VIPER architecture, i helped develop and maintain core features across several modules.  
-                it was a fast-paced environment where structure, speed, and teamwork were essential.
-              </p>
-              <div class="app-tech text-sm text-gray-400 mt-2">
-                UIKit • VIPER
-              </div>
-            </div>
-          </div>
-          
-          <!-- App 3 -->
-          <div class="app-row flex flex-col lg:flex-row items-center gap-12">
-            <div class="app-mockup flex justify-center lg:justify-start">
-              <div class="mobile-frame bg-gray-800 rounded-3xl p-2 shadow-2xl">
-                <img src="assets/images/paxel.PNG" alt="Paxel courier and delivery iOS app - UIKit interface showing shipment tracking, delivery management, and logistics features">
-              </div>
-            </div>
-            <div class="app-item flex-1">
-              <h3 class="app-title text-xl font-medium text-custom-text mb-3">🚚 Courier & Delivery App</h3>
-              <p class="app-description text-custom-secondary leading-relaxed">
-                i was involved from day one on this courier app from initial development all the way to its public release.
-                built with UIKit and MVVM, i worked on everything from core flows to UI components, making sure the app was stable, consistent, and ready to scale.  
-                it was a hands-on project that taught me a lot about building from the ground up.
-              </p>
-              <div class="app-tech text-sm text-gray-400 mt-2">
-                UIKit • MVVM
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        <a href="https://github.com/erzailham" class="social-link" style="--si: 0" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58V20.2c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.05.14 3 .4 2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/>
+          </svg>
+        </a>
 
-      <!-- Music Singles -->
-      <div class="music-portfolio">
-        <h2 class="section-title text-3xl md:text-4xl font-medium text-custom-accent mb-12 text-center">discography</h2>
-        
-        <div class="space-y-12">
-          <!-- Single 1 -->
-          <div class="single-item flex flex-col md:flex-row items-center gap-8">
-            <div class="album-artwork flex-shrink-0">
-              <img src="assets/images/coffee.jpg" alt="Coffee single album cover by erza. - Copeland cover reimagined with emo lo-fi production, released 2023" class="w-32 h-32 md:w-40 md:h-40 rounded-lg shadow-lg object-cover">
-            </div>
-            <div class="single-info flex-1">
-              <h3 class="single-title text-xl font-medium text-custom-text mb-2">coffee</h3>
-              <p class="single-description text-custom-secondary leading-relaxed">
-                originally by copeland, reimagined through my own lens.
-                this cover started as a quiet experiment a way to revisit a song i've always loved and let it breathe in my own rhythm.  
-                produced alone in my room, shaped by the kind of silence that only early mornings give.
-                this version is also a small tribute to a café i hold dear index coffee.
-              </p>
-              <div class="single-meta text-sm text-gray-400 mt-2">
-                • 2023
-              </div>
-            </div>
-          </div>
+        <a href="https://linkedin.com/in/erzailham" class="social-link" style="--si: 1" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
 
-          <!-- Single 2 -->
-          <div class="single-item flex flex-col md:flex-row items-center gap-8">
-            <div class="album-artwork flex-shrink-0">
-              <img src="assets/images/oh-shit-im-getting-old.jpg" alt="Oh Shit I'm Getting Old single album cover by erza. - Original emo lo-fi track about aging and uncertainty, released 2022" class="w-32 h-32 md:w-40 md:h-40 rounded-lg shadow-lg object-cover">
-            </div>
-            <div class="single-info flex-1">
-              <h3 class="single-title text-xl font-medium text-custom-text mb-2">oh shit i'm getting old</h3>
-              <p class="single-description text-custom-secondary leading-relaxed">
-                written during a quiet panic. released on my birthday.
-                this song came from a place of doubt about time, progress, and the blurry lines between "figuring it out" and "falling behind."  
-                it's messy, honest, and probably the most me i've ever sounded.
-              </p>
-              <div class="single-meta text-sm text-gray-400 mt-2">
-                • 2022
-              </div>
-            </div>
-          </div>
+        <a href="https://instagram.com/erzailham" class="social-link" style="--si: 2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+        </a>
 
-          <!-- Single 3 -->
-          <div class="single-item flex flex-col md:flex-row items-center gap-8">
-            <div class="album-artwork flex-shrink-0">
-              <img src="assets/images/again-and-again.jpg" alt="Again and Again single album cover by erza. - Debut emo lo-fi track with looping thoughts and late-night vibes, released 2021" class="w-32 h-32 md:w-40 md:h-40 rounded-lg shadow-lg object-cover">
-            </div>
-            <div class="single-info flex-1">
-              <h3 class="single-title text-xl font-medium text-custom-text mb-2">again and again</h3>
-              <p class="single-description text-custom-secondary leading-relaxed">
-                my first release — co-written and soaked in emo lo-fi vibes.  
-                built on simple chords, subtle layers, and looping thoughts that echo late-night moods.  
-                unpolished on purpose, this track set the tone for everything that came after.
-              </p>
-              <div class="single-meta text-sm text-gray-400 mt-2">
-                • 2021
-              </div>
-            </div>
-          </div>
+        <a href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX" class="social-link" style="--si: 3" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+          </svg>
+        </a>
 
-          <iframe class="mt-4" data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/6NCHaPkxIW8Hzf1omdLcAX?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Spotify embed for erza. artist profile"></iframe>
-        </div>
+        <a href="https://youtube.com/@erza" class="social-link" style="--si: 4" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section py-16 opacity-0 animate-fade-in-up" style="animation-delay: 1.1s;">
-      <div class="text-center">
-        <!-- Email Display -->
-        <div class="email-container mb-12">
-          <a href="mailto:hi@erzailham.com" class="email-link group inline-flex items-center gap-4 text-custom-accent hover:text-custom-hover transition-all duration-300">
-            <span class="contact-email text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">hi@erzailham.com</span>
-            <svg class="arrow-icon w-8 h-8 transform group-hover:translate-x-2 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7 17l9.2-9.2M17 17V7H7"/>
-            </svg>
-          </a>
+    <!-- Apps -->
+    <section id="apps" class="section section-apps" aria-label="iOS apps">
+      <h2 class="section-label reveal-section">apps</h2>
+
+      <div class="app-list">
+
+        <!-- App 1 -->
+        <div class="app-row stagger-item" style="--stagger-i: 0" role="button" tabindex="0" aria-expanded="false" aria-controls="app-detail-1">
+          <div class="app-row-header">
+            <span class="app-name">Health Diagnostics Platform</span>
+            <span class="app-role">iOS lead</span>
+            <span class="app-year">2024</span>
+            <span class="app-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="app-detail-1" class="app-detail" aria-hidden="true">
+            <div class="app-detail-inner">
+              <div class="app-detail-grid">
+                <img
+                  src="assets/images/prodia.PNG"
+                  alt="U by Prodia — health diagnostics iOS app, SwiftUI"
+                  class="app-screenshot"
+                  loading="lazy"
+                >
+                <div>
+                  <p class="app-desc">
+                    worked as ios lead on a healthcare diagnostics app. built clear, accessible interfaces using swiftui and mvvm; most of the work was in reusable components, performance, and making sure the ui made sense for real people in clinical contexts.
+                  </p>
+                  <p class="app-tech">SwiftUI · MVVM</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Social Media Links -->
-        <div class="social-links flex justify-center items-center gap-8 flex-wrap">
-          <a href="https://github.com/erzailham" target="_blank" rel="noopener noreferrer" class="social-link group">
-            <svg class="w-6 h-6 text-custom-secondary group-hover:text-custom-hover transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          
-          <a href="https://linkedin.com/in/erzailham" target="_blank" rel="noopener noreferrer" class="social-link group">
-            <svg class="w-6 h-6 text-custom-secondary group-hover:text-custom-hover transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          
-          <a href="https://instagram.com/erzailham" target="_blank" rel="noopener noreferrer" class="social-link group">
-            <svg class="w-6 h-6 text-custom-secondary group-hover:text-custom-hover transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-          
-          <a href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX" target="_blank" rel="noopener noreferrer" class="social-link group">
-            <svg class="w-6 h-6 text-custom-secondary group-hover:text-custom-hover transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
-            </svg>
-          </a>
-          
-          <a href="https://youtube.com/@erza" target="_blank" rel="noopener noreferrer" class="social-link group">
-            <svg class="w-6 h-6 text-custom-secondary group-hover:text-custom-hover transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-            </svg>
-          </a>
+        <!-- App 2 -->
+        <div class="app-row stagger-item" style="--stagger-i: 1" role="button" tabindex="0" aria-expanded="false" aria-controls="app-detail-2">
+          <div class="app-row-header">
+            <span class="app-name">Telco Service App</span>
+            <span class="app-role">iOS developer</span>
+            <span class="app-year">2022</span>
+            <span class="app-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="app-detail-2" class="app-detail" aria-hidden="true">
+            <div class="app-detail-inner">
+              <div class="app-detail-grid">
+                <img
+                  src="assets/images/myxl.PNG"
+                  alt="myXL — telco service iOS app, UIKit"
+                  class="app-screenshot"
+                  loading="lazy"
+                >
+                <div>
+                  <p class="app-desc">
+                    worked on the ios team for a large-scale telco app used by millions daily. built and maintained core features across several modules using uikit and viper. fast-paced environment where structure and speed were essential.
+                  </p>
+                  <p class="app-tech">UIKit · VIPER</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- App 3 -->
+        <div class="app-row stagger-item" style="--stagger-i: 2" role="button" tabindex="0" aria-expanded="false" aria-controls="app-detail-3">
+          <div class="app-row-header">
+            <span class="app-name">Courier &amp; Delivery App</span>
+            <span class="app-role">iOS developer</span>
+            <span class="app-year">2021</span>
+            <span class="app-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="app-detail-3" class="app-detail" aria-hidden="true">
+            <div class="app-detail-inner">
+              <div class="app-detail-grid">
+                <img
+                  src="assets/images/paxel.PNG"
+                  alt="Paxel — courier and delivery iOS app, UIKit"
+                  class="app-screenshot"
+                  loading="lazy"
+                >
+                <div>
+                  <p class="app-desc">
+                    involved from day one through public release on this courier app. built with uikit and mvvm: core flows, ui components, stability, scale. hands-on from the ground up, which taught me a lot about building for real constraints.
+                  </p>
+                  <p class="app-tech">UIKit · MVVM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Copyright -->
-    <div class="absolute bottom-8 right-8 text-sm text-gray-500 font-light">// erza.™ 2025</div>
-  </div>
+    <!-- Projects -->
+    <section id="experiments" class="section section-projects" aria-label="Side projects">
+      <h2 class="section-label reveal-section">experiments</h2>
 
-  <!-- Typing Animation Script -->
+      <div class="project-list">
+
+        <div class="project-row stagger-item" style="--stagger-i: 0" role="button" tabindex="0" aria-expanded="false" aria-controls="project-detail-1">
+          <div class="project-row-header">
+            <span class="project-name">slicebill</span>
+            <span class="project-tag">pwa · ai</span>
+            <span class="project-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="project-detail-1" class="project-detail" aria-hidden="true">
+            <div class="project-detail-inner">
+              <p class="project-desc">a free pwa for splitting bills. upload a receipt, ai reads and itemizes it, assign spending per person, share the result as text or image. my first fully vibe-coded app — built to explore what ai-assisted development actually feels like end to end.</p>
+              <p class="project-tech">React.js · PWA · AI · OCR</p>
+              <a href="https://slicebill.com" class="project-link" target="_blank" rel="noopener noreferrer">visit slicebill.com ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-row stagger-item" style="--stagger-i: 1" role="button" tabindex="0" aria-expanded="false" aria-controls="project-detail-2">
+          <div class="project-row-header">
+            <span class="project-name">hotreloads</span>
+            <span class="project-tag">tiktok · ai content</span>
+            <span class="project-toggle" aria-hidden="true">+</span>
+          </div>
+          <div id="project-detail-2" class="project-detail" aria-hidden="true">
+            <div class="project-detail-inner">
+              <p class="project-desc">a content channel covering ai tools, ai news, and coding — built for developers who want to stay current without the noise. sharing what's actually useful, not just what's trending.</p>
+              <p class="project-tech">TikTok · Instagram</p>
+              <a href="https://tiktok.com/@hotreloads" class="project-link" target="_blank" rel="noopener noreferrer">@hotreloads on TikTok ↗</a>
+              <a href="https://instagram.com/hotreloads" class="project-link" target="_blank" rel="noopener noreferrer">@hotreloads on Instagram ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Music -->
+    <section id="music" class="section section-music" aria-label="Music">
+      <h2 class="section-label reveal-section">music</h2>
+
+      <div class="track-list" role="list">
+
+        <a
+          href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX"
+          class="track-row stagger-item"
+          style="--stagger-i: 0"
+          role="listitem"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="coffee, 2023 — open on Spotify"
+        >
+          <img src="assets/images/coffee.jpg" alt="" class="track-art" loading="lazy" aria-hidden="true">
+          <span class="track-title">coffee</span>
+          <span class="track-year">2023</span>
+          <span class="track-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX"
+          class="track-row stagger-item"
+          style="--stagger-i: 1"
+          role="listitem"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="oh shit i'm getting old, 2022 — open on Spotify"
+        >
+          <img src="assets/images/oh-shit-im-getting-old.jpg" alt="" class="track-art" loading="lazy" aria-hidden="true">
+          <span class="track-title">oh shit i'm getting old</span>
+          <span class="track-year">2022</span>
+          <span class="track-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          href="https://open.spotify.com/artist/6NCHaPkxIW8Hzf1omdLcAX"
+          class="track-row stagger-item"
+          style="--stagger-i: 2"
+          role="listitem"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="again and again, 2021 — open on Spotify"
+        >
+          <img src="assets/images/again-and-again.jpg" alt="" class="track-art" loading="lazy" aria-hidden="true">
+          <span class="track-title">again and again</span>
+          <span class="track-year">2021</span>
+          <span class="track-arrow" aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section id="writing" class="section section-writing" aria-label="Writing">
+      <h2 class="section-label reveal-section">writing</h2>
+
+      <div class="writing-list" role="list">
+
+        <a
+          href="https://medium.com/swift2go/swiftui-is-coming-its-time-to-say-goodbye-to-uikit-8dea3b7f1eda"
+          class="writing-row stagger-item"
+          style="--stagger-i: 0"
+          role="listitem"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="swiftui is coming, it's time to say goodbye to uikit — open on medium"
+        >
+          <div class="writing-content">
+            <span class="writing-title">swiftui is coming, it's time to say goodbye to uikit</span>
+            <span class="writing-desc">on apple's new declarative framework and what it means for everyone still writing uikit code.</span>
+          </div>
+          <span class="writing-year">2019</span>
+          <span class="writing-arrow" aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="section section-stack" aria-label="Tech stack">
+      <h2 class="section-label reveal-section">stack</h2>
+
+      <div class="stack-groups">
+
+        <div class="stack-group stagger-item" style="--stagger-i: 0">
+          <p class="stack-group-label">languages</p>
+          <div class="stack-list">
+            <div class="stack-row">swift</div>
+            <div class="stack-row">objective-c</div>
+            <div class="stack-row">javascript</div>
+          </div>
+        </div>
+
+        <div class="stack-group stagger-item" style="--stagger-i: 1">
+          <p class="stack-group-label">frameworks</p>
+          <div class="stack-list">
+            <div class="stack-row">swiftui</div>
+            <div class="stack-row">uikit</div>
+            <div class="stack-row">react native</div>
+            <div class="stack-row">react.js</div>
+          </div>
+        </div>
+
+        <div class="stack-group stagger-item" style="--stagger-i: 2">
+          <p class="stack-group-label">tools</p>
+          <div class="stack-list">
+            <div class="stack-row">xcode</div>
+            <div class="stack-row">git</div>
+            <div class="stack-row">figma</div>
+            <div class="stack-row">fastlane</div>
+            <div class="stack-row">codemagic</div>
+            <div class="stack-row">claude code</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Reach -->
+    <section id="reach" class="section-reach" aria-label="Contact">
+      <h2 class="visually-hidden">reach</h2>
+
+      <a href="mailto:hi@erzailham.com" class="email-link reveal-section" aria-label="Send email to hi@erzailham.com">
+        <span class="email-text">hi@erzailham.com</span>
+        <span class="email-arrow" aria-hidden="true">↗</span>
+      </a>
+
+      <p class="copyright">// erza.™ 2026</p>
+
+    </section>
+
+  </main>
+
   <script>
-    // Remove cursor after typing animation completes
-    setTimeout(() => {
-      const line1 = document.querySelector('.typing-text.line-1');
-      if (line1) line1.classList.add('complete');
-    }, 1700); // 0.5s delay + 1.2s typing duration
+  (function () {
+    /* ---- Theme ---- */
+    var html = document.documentElement;
 
-    setTimeout(() => {
-      const line2 = document.querySelector('.typing-text.line-2');
-      if (line2) line2.classList.add('complete');
-    }, 3200); // 2s delay + 1.2s typing duration
-  </script>
+    function applyTheme(t) {
+      html.dataset.theme = t;
+      localStorage.setItem('erza-theme', t);
+      document.querySelectorAll('.theme-btn').forEach(function (btn) {
+        var active = btn.dataset.themeBtn === t;
+        btn.classList.toggle('active', active);
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
 
-  <!-- Smooth Scrolling Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get all navigation links
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-          
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          
-          if (targetSection) {
-            // Smooth scroll to target section
-            targetSection.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-            
-            // Update active nav link
-            navLinks.forEach(navLink => {
-              navLink.classList.remove('underline', 'decoration-2', 'underline-offset-4');
-            });
-            this.classList.add('underline', 'decoration-2', 'underline-offset-4');
-          }
-        });
-      });
-      
-      // Update active nav based on scroll position
-      window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('main, section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id') || 'home';
-          }
-        });
-        
-        navLinks.forEach(link => {
-          link.classList.remove('underline', 'decoration-2', 'underline-offset-4');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('underline', 'decoration-2', 'underline-offset-4');
-          }
-        });
-      });
+    applyTheme(localStorage.getItem('erza-theme') || 'light');
+
+    document.querySelectorAll('.theme-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () { applyTheme(btn.dataset.themeBtn); });
     });
+
+    /* ---- Signal resolve ---- */
+    function signalResolve(el) {
+      if (!el) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var target   = el.textContent.trim();
+      var chars    = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      var duration = 1300;
+      var delay    = 120;
+      var startAt;
+
+      function tick(now) {
+        if (!startAt) startAt = now + delay;
+        if (now < startAt) { requestAnimationFrame(tick); return; }
+        var t        = Math.min((now - startAt) / duration, 1);
+        var resolved = Math.floor(t * target.length);
+        var out      = '';
+        for (var i = 0; i < target.length; i++) {
+          var c = target[i];
+          if (c === ' ' || c === '.' || c === '™') { out += c; continue; }
+          out += i < resolved ? c : chars[Math.floor(Math.random() * chars.length)];
+        }
+        el.textContent = out;
+        if (t < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target;
+          var cur = document.createElement('span');
+          cur.className = 'cursor-blink';
+          cur.setAttribute('aria-hidden', 'true');
+          cur.textContent = '|';
+          el.appendChild(cur);
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    /* ---- Expandable rows (apps + projects) ---- */
+    function initExpandable(selector) {
+      document.querySelectorAll(selector).forEach(function (row) {
+        function toggle() {
+          var expanded = row.getAttribute('aria-expanded') === 'true';
+          document.querySelectorAll(selector).forEach(function (r) {
+            r.setAttribute('aria-expanded', 'false');
+            var d = r.querySelector('.app-detail, .project-detail');
+            if (d) d.setAttribute('aria-hidden', 'true');
+          });
+          if (!expanded) {
+            row.setAttribute('aria-expanded', 'true');
+            var det = row.querySelector('.app-detail, .project-detail');
+            if (det) det.setAttribute('aria-hidden', 'false');
+          }
+        }
+        row.addEventListener('click', toggle);
+        row.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+      });
+    }
+
+    /* ---- Magnetic CTA ---- */
+    function initMagnetic() {
+      var btn = document.querySelector('.cta-btn');
+      if (!btn) return;
+      var strength = 0.3;
+      var restoreRaf;
+
+      btn.addEventListener('mousemove', function (e) {
+        cancelAnimationFrame(restoreRaf);
+        var rect = btn.getBoundingClientRect();
+        var dx = (e.clientX - (rect.left + rect.width  / 2)) * strength;
+        var dy = (e.clientY - (rect.top  + rect.height / 2)) * strength;
+        btn.style.transition = 'transform 0.12s cubic-bezier(0.16,1,0.3,1), background-color 0.2s, color 0.2s';
+        btn.style.transform  = 'translate(' + dx + 'px,' + dy + 'px)';
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        btn.style.transition = 'transform 0.55s cubic-bezier(0.16,1,0.3,1), background-color 0.2s, color 0.2s';
+        btn.style.transform  = '';
+        restoreRaf = setTimeout(function () { btn.style.transition = ''; }, 600);
+      });
+    }
+
+    /* ---- Nav link text scramble ---- */
+    function initNavScramble() {
+      var chars = 'abcdefghijklmnopqrstuvwxyz';
+      document.querySelectorAll('.nav-link').forEach(function (link) {
+        var original = link.textContent.trim();
+        var rafId;
+
+        link.addEventListener('mouseenter', function () {
+          cancelAnimationFrame(rafId);
+          var start = null;
+          var duration = 320;
+
+          function tick(now) {
+            if (!start) start = now;
+            var t        = Math.min((now - start) / duration, 1);
+            var resolved = Math.floor(t * original.length);
+            var out      = '';
+            for (var i = 0; i < original.length; i++) {
+              out += i < resolved
+                ? original[i]
+                : chars[Math.floor(Math.random() * chars.length)];
+            }
+            link.textContent = out;
+            if (t < 1) rafId = requestAnimationFrame(tick);
+            else        link.textContent = original;
+          }
+          rafId = requestAnimationFrame(tick);
+        });
+
+        link.addEventListener('mouseleave', function () {
+          cancelAnimationFrame(rafId);
+          link.textContent = original;
+        });
+      });
+    }
+
+    /* ---- Scroll reveal ---- */
+    function initReveal() {
+      document.documentElement.classList.add('js-reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.reveal-section, .stagger-item').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+        return;
+      }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+      document.querySelectorAll('.reveal-section, .stagger-item').forEach(function (el) {
+        obs.observe(el);
+      });
+    }
+
+    /* ---- IntersectionObserver for nav ---- */
+    function initNav() {
+      var navLinks = document.querySelectorAll('.nav-link[data-target]');
+      var sections = document.querySelectorAll('#apps, #experiments, #music, #writing, #stack, #reach');
+
+      if (!('IntersectionObserver' in window)) return;
+
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function (l) { l.classList.remove('active'); });
+            var link = document.querySelector('.nav-link[data-target="' + entry.target.id + '"]');
+            if (link) link.classList.add('active');
+          }
+        });
+      }, { threshold: 0.3 });
+
+      sections.forEach(function (s) { obs.observe(s); });
+    }
+
+    /* ---- Smooth scroll ---- */
+    function initScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var id     = a.getAttribute('href').slice(1);
+          var target = document.getElementById(id);
+          if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+      });
+    }
+
+    /* ---- Boot ---- */
+    document.addEventListener('DOMContentLoaded', function () {
+      signalResolve(document.querySelector('.opening-name'));
+      initExpandable('.app-row');
+      initExpandable('.project-row');
+      initMagnetic();
+      initNavScramble();
+      initNav();
+      initScroll();
+      initReveal();
+    });
+  })();
   </script>
 </body>
 </html>
